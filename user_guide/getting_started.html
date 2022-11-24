@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Modules" href="modules/modules.html" /><link rel="prev" title="👤 User Guide" href="user_guide.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🏗️ Workflows (CI/CD)" href="workflows.html" /><link rel="prev" title="👤 User Guide" href="user_guide.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Getting Started - Toolbox</title>
+        <title>🚦 Getting Started - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -161,8 +161,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="user_guide.html">👤 User Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="modules/modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">🚦 Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">🏗️ Workflows (CI/CD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customization.html">🔧 Customization</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="modules/modules.html">📦 Modules</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="modules/nox.html">nox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules/pre_commit_hooks.html">pre_commit_hooks</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="modules/sphinx/sphinx.html">sphinx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -186,8 +188,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">🧰 API Reference</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../design.html">Design Document</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developer_guide/todos.html">Todo’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design.html">🗒 Design Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guide/todos.html">📋 Todo’s</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">📝 Changelog</a></li>
@@ -226,20 +228,50 @@
         </div>
         <article role="main">
           <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
-<section id="how-to-use-the-python-toolbox">
-<h2>How to use the python toolbox<a class="headerlink" href="#how-to-use-the-python-toolbox" title="Permalink to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Add the toolbox as dependency</p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry add --dev exasol-toolbox
+<h1>🚦 Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<section id="preparing-the-project">
+<h2>Preparing the Project<a class="headerlink" href="#preparing-the-project" title="Permalink to this heading">#</a></h2>
+<section id="add-the-toolbox-as-dependency">
+<h3>1. Add the toolbox as dependency<a class="headerlink" href="#add-the-toolbox-as-dependency" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry add --group dev exasol-toolbox
 </pre></div>
 </div>
-</div></blockquote>
+</section>
+<section id="fine-tune-the-gitignore-file">
+<h3>2. Fine tune the .gitignore file<a class="headerlink" href="#fine-tune-the-gitignore-file" title="Permalink to this heading">#</a></h3>
+<p>Add the standard documentation output folder (<em>.html-documentation</em>) to the <em>.gitignore</em>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;.html-documentation&quot;</span> &gt;&gt; .gitignore <span class="o">&amp;&amp;</span> git add .gitignore <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;Add documentation build folder to .gitignore&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="provide-a-project-configuration">
+<h3>3. Provide a project configuration<a class="headerlink" href="#provide-a-project-configuration" title="Permalink to this heading">#</a></h3>
+<p>Make sure you provide the required configuration. Configuration for the exasol-toolbox gets provided by creating
+a <em>noxconfig.py</em> file in the workspace root. This file should contain at least
+a single module constant with the name <strong>PROJECT_CONFIG</strong> pointing to an object,
+which is required to to provide the following attributes:</p>
+<ul>
+<li><dl class="py attribute">
+<dt class="sig sig-object py" id="root">
+<span class="sig-name descname"><span class="pre">root</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#root" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 </li>
-<li><p>Add a noxconfig.py file containing a settings object which provides the following attributes</p>
-<blockquote>
-<div><div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<li><dl class="py attribute">
+<dt class="sig sig-object py" id="doc">
+<span class="sig-name descname"><span class="pre">doc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#doc" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</li>
+<li><dl class="py attribute">
+<dt class="sig sig-object py" id="version_file">
+<span class="sig-name descname"><span class="pre">version_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#version_file" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</li>
+</ul>
+<p>Alternatively you can use the <em>noxconfig.py</em> file bellow and adjust the value of the attributes if needed:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -275,25 +307,42 @@
 <span class="n">PROJECT_CONFIG</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Make sure you configured the required tool(s)</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>coverage (files custom)</p></li>
-<li><p>pylint (files custom)</p></li>
-<li><p>black (provided)</p></li>
-<li><p>isort (provided)</p></li>
-<li><p>mypy (files &amp; suppression custom)</p></li>
+</section>
+<section id="configure-the-tooling">
+<h3>4. Configure the tooling<a class="headerlink" href="#configure-the-tooling" title="Permalink to this heading">#</a></h3>
+<p>In order to make all standard task work properly you need add the configuration settings bellow to your <em>pyproject.toml</em>,
+and adjust the following settings to your project needs:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>coverage</dt><dd><ul>
+<li><p>source</p></li>
+<li><p>fail_under</p></li>
 </ul>
-<p>Example configuration</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>pylint</dt><dd><ul>
+<li><p>fail-under</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>mypy (overrides)</dt><dd><ul>
+<li><p>module</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.coverage.run]</span><span class="w"></span>
 <span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;exasol&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 
 <span class="k">[tool.coverage.report]</span><span class="w"></span>
-<span class="n">fail_under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
+<span class="n">fail_under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
 
 
 <span class="k">[tool.black]</span><span class="w"></span>
@@ -308,7 +357,7 @@
 
 
 <span class="k">[tool.pylint.master]</span><span class="w"></span>
-<span class="n">fail-under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.4</span><span class="w"></span>
+<span class="n">fail-under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.8</span><span class="w"></span>
 
 <span class="k">[tool.pylint.format]</span><span class="w"></span>
 <span class="n">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span><span class="w"></span>
@@ -324,11 +373,13 @@
 <span class="n">ignore_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Import the toolbox tasks in your noxfile</p>
-<blockquote>
-<div><div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nox</span>
+</section>
+<section id="make-the-toolbox-task-available">
+<h3>5. Make the toolbox task available<a class="headerlink" href="#make-the-toolbox-task-available" title="Permalink to this heading">#</a></h3>
+<p>In order to use the standard toolbox task via nox, just import them in your <em>noxfile.py</em>.
+If you only need the standard tasks provided by the toolbox your <em>noxfile.py</em> is straight
+forward and you just can use the example <em>noxfile.py</em> bellow.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nox</span>
 
 <span class="c1"># imports all nox task provided by the toolbox</span>
 <span class="kn">from</span> <span class="nn">exasol.toolbox.nox.tasks</span> <span class="kn">import</span> <span class="o">*</span>
@@ -337,21 +388,29 @@
 <span class="n">nox</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">sessions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fix&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ol>
 </section>
-<section id="run-use-tasks-locally">
-<h2>Run/Use Tasks locally<a class="headerlink" href="#run-use-tasks-locally" title="Permalink to this heading">#</a></h2>
+<section id="go">
+<h3>6. Go 🥜<a class="headerlink" href="#go" title="Permalink to this heading">#</a></h3>
+<p>You are ready to use the toolbox. With <em>nox -l</em> you can list all available tasks.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>nox -l
+<span class="go">Sessions defined in &lt;PATH_TO_YOUR_PROJECT&gt;/noxfile.py:</span>
+
+<span class="go">* fix -&gt; Runs all automated fixes on the code base</span>
+<span class="go">- check -&gt; Runs all available checks on the project</span>
+<span class="go">- lint -&gt; Runs the linter on the project</span>
+<span class="go">- type-check -&gt; Runs the type checker on the project</span>
+<span class="go">- unit-tests -&gt; Runs all unit tests</span>
+<span class="go">- integration-tests -&gt; Runs the all integration tests</span>
+<span class="go">- coverage -&gt; Runs all tests (unit + integration) and reports the code coverage</span>
+<span class="go">- build-docs -&gt; Builds the project documentation</span>
+<span class="go">- open-docs -&gt; Opens the built project documentation</span>
+<span class="go">- clean-docs -&gt; Removes the documentations build folder</span>
+
+<span class="go">sessions marked with * are selected, sessions marked with - are skipped.</span>
+</pre></div>
+</div>
+<p>Enjoy!</p>
 </section>
-<section id="generate-ci-ci-cd-workflows">
-<h2>Generate CI &amp; CI/CD workflows<a class="headerlink" href="#generate-ci-ci-cd-workflows" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>ci.yml</p></li>
-<li><p>ci-cd.yml (Github secret for pypi required!)</p></li>
-<li><p>pr-merge.yml</p></li>
-<li><p>add .html-documenation to .gitignore</p></li>
-</ul>
 </section>
 </section>
 
@@ -360,12 +419,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="modules/modules.html">
+          <a class="next-page" href="workflows.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Modules</div>
+                <div class="title">🏗️ Workflows (CI/CD)</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -412,10 +471,21 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Getting Started</a><ul>
-<li><a class="reference internal" href="#how-to-use-the-python-toolbox">How to use the python toolbox</a></li>
-<li><a class="reference internal" href="#run-use-tasks-locally">Run/Use Tasks locally</a></li>
-<li><a class="reference internal" href="#generate-ci-ci-cd-workflows">Generate CI &amp; CI/CD workflows</a></li>
+<li><a class="reference internal" href="#">🚦 Getting Started</a><ul>
+<li><a class="reference internal" href="#preparing-the-project">Preparing the Project</a><ul>
+<li><a class="reference internal" href="#add-the-toolbox-as-dependency">1. Add the toolbox as dependency</a></li>
+<li><a class="reference internal" href="#fine-tune-the-gitignore-file">2. Fine tune the .gitignore file</a></li>
+<li><a class="reference internal" href="#provide-a-project-configuration">3. Provide a project configuration</a><ul>
+<li><a class="reference internal" href="#root"><code class="docutils literal notranslate"><span class="pre">root</span></code></a></li>
+<li><a class="reference internal" href="#doc"><code class="docutils literal notranslate"><span class="pre">doc</span></code></a></li>
+<li><a class="reference internal" href="#version_file"><code class="docutils literal notranslate"><span class="pre">version_file</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configure-the-tooling">4. Configure the tooling</a></li>
+<li><a class="reference internal" href="#make-the-toolbox-task-available">5. Make the toolbox task available</a></li>
+<li><a class="reference internal" href="#go">6. Go 🥜</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

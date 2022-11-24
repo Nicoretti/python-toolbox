@@ -161,8 +161,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="user_guide/user_guide.html">👤 User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/getting_started.html">Getting Started</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="user_guide/modules/modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/getting_started.html">🚦 Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/workflows.html">🏗️ Workflows (CI/CD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/customization.html">🔧 Customization</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="user_guide/modules/modules.html">📦 Modules</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/modules/nox.html">nox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/modules/pre_commit_hooks.html">pre_commit_hooks</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="user_guide/modules/sphinx/sphinx.html">sphinx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -186,8 +188,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">🧰 API Reference</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="design.html">Design Document</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer_guide/todos.html">Todo’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html">🗒 Design Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_guide/todos.html">📋 Todo’s</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">📝 Changelog</a></li>
@@ -238,20 +240,36 @@
 <section id="features">
 <h2>🚀 Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Common nox task(s) definitions &amp; implementations</p></li>
-<li><p>Multi version documentation generation</p></li>
-<li><p>Exasol specific Pre-Commit hooks</p></li>
 <li><dl class="simple">
-<dt>Generators</dt><dd><ul>
-<li><p>Project Config</p></li>
-<li><p>Issue Templates</p></li>
-<li><p>Pull Request Template</p></li>
-<li><p>Workflows</p></li>
+<dt>Centrally managed standard tasks</dt><dd><ul>
+<li><p>code formatting &amp; upgrading</p></li>
+<li><p>linting</p></li>
+<li><p>type-checking</p></li>
+<li><p>unit-tests</p></li>
+<li><p>integration-tests</p></li>
+<li><p>coverage</p></li>
+<li><p>documentation</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p>Helper Scripts</p></li>
+<li><dl class="simple">
+<dt>Centrally manged core workflows</dt><dd><ul>
+<li><p>workspace/project verification</p></li>
+<li><p>build and publish releases</p></li>
+<li><p>build and publish documentation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Configurable &amp; Extensible</dt><dd><ul>
+<li><p>Project configuration</p></li>
+<li><p>Event hooks</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </section>
 <section id="prerequisites">

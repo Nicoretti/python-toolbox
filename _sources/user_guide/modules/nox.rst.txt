@@ -1,2 +1,3 @@
 nox
 ======
+The nox package contains nox related functionalities like pre defined nox tasks.

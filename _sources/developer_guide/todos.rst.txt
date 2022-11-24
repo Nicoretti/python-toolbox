@@ -1,5 +1,5 @@
-Todo's
--------
+📋 Todo's
+---------
 .. todolist::
 
 - Add common nox tasks
@@ -26,4 +26,6 @@ Todo's
     - Add changelog.d template generator
 
 - Toolbox helper
-    - update generated config, workflows etc
+    - update and/or generated config, workflows, etc.
+
+- Convert Todo's list into issue(s)
