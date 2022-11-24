@@ -244,12 +244,14 @@
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Settings</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
     <span class="n">root</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
     <span class="n">doc</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;doc&quot;</span>
     <span class="n">build</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;build&quot;</span>
     <span class="n">version_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;exasol&quot;</span> <span class="o">/</span> <span class="s2">&quot;toolbox&quot;</span> <span class="o">/</span> <span class="s2">&quot;version.py&quot;</span>
-    <span class="n">min_code_coverage</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="n">PROJECT_CONFIG</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
 </pre></div>
 </div>
 </div></blockquote>
