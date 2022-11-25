@@ -38,8 +38,11 @@ This project mainly serves three main purposes:
     #. Provide usage examples of this common functionality
 
 
+Design
+------
+
 Design Principles
------------------
++++++++++++++++++
 * This project needs to be thought of as development dependency only!
     - Library code should not imported/used in non development code of the projects
 * Convention over configuration
@@ -105,9 +108,6 @@ Design Principles
         2. Provide tooling to generate files, settings etc.
         3. Provide tooling to automagically update und sync files, settings etc.
 
-Design
-------
-
 
 Design Decisions
 ++++++++++++++++
@@ -141,7 +141,7 @@ Design Decisions
 * Workflows only shall provide an execution environment and orchestrate the execution itself
 
 Detailed Design
-***************
++++++++++++++++
 
 Tasks
 ~~~~~

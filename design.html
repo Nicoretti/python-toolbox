@@ -277,8 +277,10 @@ may have project specific additions, which ideally reuse existing building block
 </ol>
 </div></blockquote>
 </section>
+<section id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this heading">#</a></h2>
 <section id="design-principles">
-<h2>Design Principles<a class="headerlink" href="#design-principles" title="Permalink to this heading">#</a></h2>
+<h3>Design Principles<a class="headerlink" href="#design-principles" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><dl class="simple">
 <dt>This project needs to be thought of as development dependency only!</dt><dd><ul class="simple">
@@ -387,8 +389,6 @@ E.g.:</p>
 </li>
 </ul>
 </section>
-<section id="design">
-<h2>Design<a class="headerlink" href="#design" title="Permalink to this heading">#</a></h2>
 <section id="design-decisions">
 <h3>Design Decisions<a class="headerlink" href="#design-decisions" title="Permalink to this heading">#</a></h3>
 <ul>
@@ -428,17 +428,18 @@ but isn’t  annotated as a nox session/task (<a class="reference external" href
 </li>
 <li><p>Workflows only shall provide an execution environment and orchestrate the execution itself</p></li>
 </ul>
+</section>
 <section id="detailed-design">
-<h4>Detailed Design<a class="headerlink" href="#detailed-design" title="Permalink to this heading">#</a></h4>
+<h3>Detailed Design<a class="headerlink" href="#detailed-design" title="Permalink to this heading">#</a></h3>
 <section id="tasks">
-<h5>Tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">#</a></h5>
+<h4>Tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">#</a></h4>
 <p>TBD: diagram: configuration and tasks (noxfile.py + noxconfig.py + exasol.toolbox)</p>
 </section>
 <section id="workflows">
-<h5>Workflows<a class="headerlink" href="#workflows" title="Permalink to this heading">#</a></h5>
+<h4>Workflows<a class="headerlink" href="#workflows" title="Permalink to this heading">#</a></h4>
 <p>TBD: diagram: github workflows and interaction</p>
 <section id="workflows-provided-and-maintained-by-the-toolbox">
-<h6>Workflows provided and maintained by the toolbox<a class="headerlink" href="#workflows-provided-and-maintained-by-the-toolbox" title="Permalink to this heading">#</a></h6>
+<h5>Workflows provided and maintained by the toolbox<a class="headerlink" href="#workflows-provided-and-maintained-by-the-toolbox" title="Permalink to this heading">#</a></h5>
 <ul class="simple">
 <li><p>gh-pages.yml</p></li>
 <li><p>checks.yml</p></li>
@@ -446,11 +447,10 @@ but isn’t  annotated as a nox session/task (<a class="reference external" href
 </ul>
 </section>
 <section id="actions-provided-and-maintained-by-the-toolbox">
-<h6>Actions provided and maintained by the toolbox<a class="headerlink" href="#actions-provided-and-maintained-by-the-toolbox" title="Permalink to this heading">#</a></h6>
+<h5>Actions provided and maintained by the toolbox<a class="headerlink" href="#actions-provided-and-maintained-by-the-toolbox" title="Permalink to this heading">#</a></h5>
 <ul class="simple">
 <li><p>python-environment</p></li>
 </ul>
-</section>
 </section>
 </section>
 </section>
@@ -517,16 +517,14 @@ but isn’t  annotated as a nox session/task (<a class="reference external" href
 <li><a class="reference internal" href="#">📗 Design Document</a><ul>
 <li><a class="reference internal" href="#motivation">Motivation</a></li>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#design-principles">Design Principles</a></li>
 <li><a class="reference internal" href="#design">Design</a><ul>
-<li><a class="reference internal" href="#design-decisions">Design Decisions</a><ul>
+<li><a class="reference internal" href="#design-principles">Design Principles</a></li>
+<li><a class="reference internal" href="#design-decisions">Design Decisions</a></li>
 <li><a class="reference internal" href="#detailed-design">Detailed Design</a><ul>
 <li><a class="reference internal" href="#tasks">Tasks</a></li>
 <li><a class="reference internal" href="#workflows">Workflows</a><ul>
 <li><a class="reference internal" href="#workflows-provided-and-maintained-by-the-toolbox">Workflows provided and maintained by the toolbox</a></li>
 <li><a class="reference internal" href="#actions-provided-and-maintained-by-the-toolbox">Actions provided and maintained by the toolbox</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
