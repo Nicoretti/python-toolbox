@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Installation" href="install.html" /><link rel="prev" title="sphinx" href="../sphinx.html" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Quickstart" href="quickstart.html" /><link rel="prev" title="sphinx" href="../sphinx.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>sphinx-multiversion - Toolbox</title>
@@ -168,8 +168,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../nox.html">nox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../pre_commit_hooks.html">pre_commit_hooks</a></li>
 <li class="toctree-l3 current has-children"><a class="reference internal" href="../sphinx.html">sphinx</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l4 current has-children current-page"><a class="current reference internal" href="#">sphinx-multiversion </a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l5"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l4 current has-children current-page"><a class="current reference internal" href="#">sphinx-multiversion</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l5"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l5"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l5"><a class="reference internal" href="templates.html">Templates</a></li>
@@ -188,7 +187,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../api.html">🧰 API Reference</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../design.html">🗒 Design Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design.html">📗 Design Document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../developer_guide/development.html">🚧 Development - Contributing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../developer_guide/todos.html">📋 Todo’s</a></li>
 </ul>
 </li>
@@ -227,23 +227,49 @@
           </label>
         </div>
         <article role="main">
-          <section id="sphinx-multiversion-version">
-<h1>sphinx-multiversion <a class="headerlink" href="#sphinx-multiversion-version" title="Permalink to this heading">#</a></h1>
+          <section id="sphinx-multiversion">
+<h1>sphinx-multiversion<a class="headerlink" href="#sphinx-multiversion" title="Permalink to this heading">#</a></h1>
 <p>A Sphinx extension for building self-hosted versioned documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The initial version of this tool/plugin was taken from <a class="reference external" href="https://github.com/Holzhaus/sphinx-multiversion">Holzhaus/sphinx-multiversion</a>,
+also various patches from this <a class="reference external" href="https://github.com/samuel-emrys/sphinx-multiversion">samuel-emrys/sphinx-multiversion</a> fork have been applied.</p>
+<p>Both project’s have been published under the BSD-2 license and contained the following license text:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">BSD 2-Clause License</span>
+
+<span class="go">Copyright (c) 2020, Jan Holthuis &lt;jan.holthuis@ruhr-uni-bochum.de&gt;</span>
+<span class="go">All rights reserved.</span>
+
+<span class="go">Redistribution and use in source and binary forms, with or without</span>
+<span class="go">modification, are permitted provided that the following conditions are met:</span>
+
+<span class="go">1. Redistributions of source code must retain the above copyright notice, this</span>
+<span class="go">   list of conditions and the following disclaimer.</span>
+
+<span class="go">2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<span class="go">   this list of conditions and the following disclaimer in the documentation</span>
+<span class="go">   and/or other materials provided with the distribution.</span>
+
+<span class="go">THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<span class="go">AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<span class="go">IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<span class="go">DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE</span>
+<span class="go">FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span>
+<span class="go">DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span>
+<span class="go">SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span>
+<span class="go">CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,</span>
+<span class="go">OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<span class="go">OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="go">Footer</span>
+</pre></div>
+</div>
+<p>So a big thanks to <a class="reference external" href="https://github.com/Holzhaus">Jan Holthuis</a> and <a class="reference external" href="https://github.com/samuel-emrys">Samuel Dowling</a>!</p>
+</div>
 <section id="project-links">
 <h2>Project Links<a class="headerlink" href="#project-links" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Source code: <a class="reference external" href="https://github.com/Holzhaus/sphinx-multiversion">https://github.com/Holzhaus/sphinx-multiversion</a></p></li>
-</ul>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-from-pypi">Install from PyPi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-from-github">Install from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-via-setup-py">Install via <code class="file docutils literal notranslate"><span class="pre">setup.py</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html#tag-branch-remote-whitelists">Tag/Branch/Remote whitelists</a></li>
@@ -310,12 +336,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="install.html">
+          <a class="next-page" href="quickstart.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Installation</div>
+                <div class="title">Quickstart</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -362,7 +388,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">sphinx-multiversion </a><ul>
+<li><a class="reference internal" href="#">sphinx-multiversion</a><ul>
 <li><a class="reference internal" href="#project-links">Project Links</a><ul>
 </ul>
 </li>
