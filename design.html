@@ -247,8 +247,7 @@ may have project specific additions, which ideally reuse existing building block
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This project mainly serves three main purposes:</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p>Provide library code, scripts and commands for common developer tasks within a python project.</p></li>
 <li><dl class="simple">
 <dt>Provide and maintain commonly required functionality for python project</dt><dd><ul class="simple">
@@ -275,7 +274,6 @@ may have project specific additions, which ideally reuse existing building block
 </li>
 <li><p>Provide usage examples of this common functionality</p></li>
 </ol>
-</div></blockquote>
 </section>
 <section id="design">
 <h2>Design<a class="headerlink" href="#design" title="Permalink to this heading">#</a></h2>
@@ -308,10 +306,18 @@ may have project specific additions, which ideally reuse existing building block
 </dl>
 </li>
 <li><dl>
-<dt>KISS (Keep It Stupid Simple)</dt><dd><ul>
+<dt>KISS (Keep It Stupid Simple)</dt><dd><ul class="simple">
 <li><p>This project shall simplify the work of the developer, not add a burden on top</p></li>
-<li><dl>
-<dt>Try to automate as much as possible</dt><dd><div class="admonition note">
+<li><p>Try to automate as much as possible</p></li>
+<li><dl class="simple">
+<dt>Try to built on tools which are already in use</dt><dd><ul>
+<li><p>E.g. documentation related issues ideally should be addressed by extending sphinx</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is clear that not everything can and will be automated right from the beginning,
 but there should be continues effort to improve the work of the developers.</p>
@@ -323,21 +329,11 @@ but there should be continues effort to improve the work of the developers.</p>
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt>Try to built on tools which are already in use</dt><dd><ul class="simple">
-<li><p>E.g. documentation related issues ideally should be addressed by extending sphinx</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
 <li><dl>
-<dt>YAGNI (You Ain’t Gonna Need It)</dt><dd><ul>
-<li><dl>
-<dt>Only add settings, features, extension points etc. when they are explicitly needed</dt><dd><div class="admonition note">
+<dt>YAGNI (You Ain’t Gonna Need It)</dt><dd><ul class="simple">
+<li><p>Only add settings, features, extension points etc. when they are explicitly needed</p></li>
+</ul>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Every feature needs to have at least one project using it.
 Still if a feature only is used by a single project it is likely rather
@@ -346,10 +342,6 @@ it makes sense to move it into this project.</p>
 <p>Having at least two projects using a feature also will more clearly
 show the commonalities which need to be provided/dealt with.</p>
 </div>
-</dd>
-</dl>
-</li>
-</ul>
 </dd>
 </dl>
 </li>
