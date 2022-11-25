@@ -146,22 +146,64 @@ Detailed Design
 
 Tasks
 ~~~~~
-TBD: diagram: configuration and tasks (noxfile.py + noxconfig.py + exasol.toolbox)
+**TBD:** Add diagram configuration and tasks (noxfile.py + noxconfig.py + exasol.toolbox)
+
+.. list-table::
+    :header-rows: 1
+    :widths: 30 70
+
+    * - Tasks
+      - Description
+    * - fix
+      - Runs all automated fixes on the code base
+    * - check
+      - Runs all available checks on the project
+    * - lint
+      - Runs the linter on the project
+    * - type-check
+      - Runs the type checker on the project
+    * - unit-tests
+      - Runs all unit tests
+    * - integration-tests
+      - Runs the all integration tests
+    * - coverage
+      - Runs all tests (unit + integration) and reports the code coverage
+    * - build-docs
+      - Builds the project documentation
+    * - open-docs
+      - Opens the built project documentation
+    * - clean-docs
+      - Removes the documentations build folder
 
 Workflows
 ~~~~~~~~~
-TBD: diagram: github workflows and interaction
+**TBD:** Add diagram of github workflows and interaction
 
 
-Workflows provided and maintained by the toolbox
-________________________________________________
-* gh-pages.yml
-* checks.yml
-* build-and-publish.yml
+Available Workflows
+___________________
 
-Actions provided and maintained by the toolbox
-______________________________________________
-* python-environment
+.. list-table::
+    :header-rows: 1
+    :widths: 30 70
 
+    * - Workflow
+      - Description
+    * - checks.yml
+      - Verifies the project consistency (tests, linting, etc.)
+    * - build-and-publish.yml
+      - Builds and publishes releases of the project
+    * - gh-pages.yml
+      - Builds and publishes the project documentation
 
+Available Actions
+_________________
 
+.. list-table::
+    :header-rows: 1
+    :widths: 30 70
+
+    * - Action
+      - Description
+    * - python-environment
+      - Sets up an appropriate poetry based python environment
