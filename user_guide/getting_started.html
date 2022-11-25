@@ -371,6 +371,11 @@ and adjust the following settings to your project needs:</p>
 <span class="w">    </span><span class="s">&quot;test.integration.*&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 <span class="n">ignore_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+
+<span class="k">[tool.scriv]</span><span class="w"></span>
+<span class="n">new_fragment_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file: templates/fragment-template.rst&quot;</span><span class="w"></span>
+<span class="n">output_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;doc/changelog.${config:format}&quot;</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;literal: pyproject.toml: tool.poetry.version&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
