@@ -335,6 +335,8 @@ and add the following content:</p>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continues Delivery</span><span class="w"></span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nicoretti/python-toolbox/.github/workflows/build-and-publish.yml@main</span><span class="w"></span>
+<span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
