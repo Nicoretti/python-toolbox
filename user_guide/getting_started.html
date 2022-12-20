@@ -394,8 +394,62 @@ forward and you just can use the example <em>noxfile.py</em> bellow.</p>
 </pre></div>
 </div>
 </section>
+<section id="setup-the-pre-commit-hooks">
+<h3>6. Setup the pre-commit hooks<a class="headerlink" href="#setup-the-pre-commit-hooks" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Add the following .pre-commit-config.yaml to your project root</p>
+<blockquote>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">default_stages</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">commit</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nt">repos</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code-format</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code-format</span><span class="w"></span>
+<span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">python</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nt">pass_filenames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system</span><span class="w"></span>
+<span class="w">        </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry run nox -s fix</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type-check</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type-check</span><span class="w"></span>
+<span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">python</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nt">pass_filenames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system</span><span class="w"></span>
+<span class="w">        </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry run nox -s type-check</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span><span class="w"></span>
+<span class="w">        </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">python</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">        </span><span class="nt">pass_filenames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system</span><span class="w"></span>
+<span class="w">        </span><span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry run nox -s lint</span><span class="w"></span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/pre-commit/pre-commit-hooks</span><span class="w"></span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v4.4.0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check-yaml</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">end-of-file-fixer</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trailing-whitespace</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Enable pre commit hooks for your workspace</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry run pre-commit install
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
 <section id="go">
-<h3>6. Go 🥜<a class="headerlink" href="#go" title="Permalink to this heading">#</a></h3>
+<h3>7. Go 🥜<a class="headerlink" href="#go" title="Permalink to this heading">#</a></h3>
 <p>You are ready to use the toolbox. With <em>nox -l</em> you can list all available tasks.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>nox -l
 <span class="go">Sessions defined in &lt;PATH_TO_YOUR_PROJECT&gt;/noxfile.py:</span>
@@ -486,7 +540,8 @@ forward and you just can use the example <em>noxfile.py</em> bellow.</p>
 </li>
 <li><a class="reference internal" href="#configure-the-tooling">4. Configure the tooling</a></li>
 <li><a class="reference internal" href="#make-the-toolbox-task-available">5. Make the toolbox task available</a></li>
-<li><a class="reference internal" href="#go">6. Go 🥜</a></li>
+<li><a class="reference internal" href="#setup-the-pre-commit-hooks">6. Setup the pre-commit hooks</a></li>
+<li><a class="reference internal" href="#go">7. Go 🥜</a></li>
 </ul>
 </li>
 </ul>
