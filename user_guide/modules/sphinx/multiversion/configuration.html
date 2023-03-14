@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Templates" href="templates.html" /><link rel="prev" title="Quickstart" href="quickstart.html" />
 
-    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Configuration - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -311,7 +311,7 @@ To allow more flexibility, the regex is evaluated over the full refname.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To list all refnames , you can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git <span class="k">for</span>-each-ref --format <span class="s2">&quot;%(refname)&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/^refs\///g&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span><span class="k">for</span>-each-ref<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;%(refname)&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/^refs\///g&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -427,79 +427,79 @@ The <code class="docutils literal notranslate"><span class="pre">smv_outputdir_f
 </div>
 <p>If this flag is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the resulting directory structure will resemble the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>build
-├── develop
-│   ├── artefacts
-│   │   ├── example_docs-develop.epub
-│   │   ├── example_docs-develop-HTML.zip
-│   │   └── example_docs-develop.pdf
-│   ├── index.html
-│   └── ...
-├── master
-│   ├── artefacts
-│   │   ├── example_docs-master.epub
-│   │   ├── example_docs-master-HTML.zip
-│   │   └── example_docs-master.pdf
-│   ├── index.html
-│   └── ...
-└── v0.1.0
-    ├── artefacts
-    │   ├── example_docs-v0.1.0.epub
-    │   ├── example_docs-v0.1.0-HTML.zip
-    │   └── example_docs-v0.1.0.pdf
-    ├── index.html
-    └── ...
+├──<span class="w"> </span>develop
+│<span class="w">   </span>├──<span class="w"> </span>artefacts
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop.epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop-HTML.zip
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-develop.pdf
+│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>master
+│<span class="w">   </span>├──<span class="w"> </span>artefacts
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master.epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master-HTML.zip
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-master.pdf
+│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>└──<span class="w"> </span>...
+└──<span class="w"> </span>v0.1.0
+<span class="w">    </span>├──<span class="w"> </span>artefacts
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0.epub
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0-HTML.zip
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-v0.1.0.pdf
+<span class="w">    </span>├──<span class="w"> </span>index.html
+<span class="w">    </span>└──<span class="w"> </span>...
 </pre></div>
 </div>
 <p>However, if this flag is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, the resulting directory will also include intermediate build directories:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>build
-├── develop
-│   ├── artefacts
-│   │   ├── example_docs-develop.epub
-│   │   ├── example_docs-develop-HTML.zip
-│   │   └── example_docs-develop.pdf
-│   ├── epub
-│   │   ├── example.epub
-│   │   ├── index.xhtml
-│   │   └── ...
-│   ├── html
-│   │   ├── index.html
-│   │   └── ...
-│   ├── index.html
-│   ├── latexpdf
-│   │   └── latex
-│   └── ...
-├── master
-│   ├── artefacts
-│   │   ├── example_docs-master.epub
-│   │   ├── example_docs-master-HTML.zip
-│   │   └── example_docs-master.pdf
-│   ├── epub
-│   │   ├── example.epub
-│   │   ├── index.xhtml
-│   │   └── ...
-│   ├── html
-│   │   ├── index.html
-│   │   └── ...
-│   ├── index.html
-│   ├── latexpdf
-│   │   └── latex
-│   └── ...
-└── v0.1.0
-    ├── artefacts
-    │   ├── example_docs-v0.1.0.epub
-    │   ├── example_docs-v0.1.0-HTML.zip
-    │   └── example_docs-v0.1.0.pdf
-    ├── epub
-    │   ├── example.epub
-    │   ├── index.xhtml
-    │   └── ...
-    ├── html
-    │   ├── index.html
-    │   └── ...
-    ├── index.html
-    ├── latexpdf
-    │   └── latex
-    └── ...
+├──<span class="w"> </span>develop
+│<span class="w">   </span>├──<span class="w"> </span>artefacts
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop.epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop-HTML.zip
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-develop.pdf
+│<span class="w">   </span>├──<span class="w"> </span>epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example.epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.xhtml
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>html
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>├──<span class="w"> </span>latexpdf
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>latex
+│<span class="w">   </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>master
+│<span class="w">   </span>├──<span class="w"> </span>artefacts
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master.epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master-HTML.zip
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-master.pdf
+│<span class="w">   </span>├──<span class="w"> </span>epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example.epub
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.xhtml
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>html
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>index.html
+│<span class="w">   </span>├──<span class="w"> </span>latexpdf
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>latex
+│<span class="w">   </span>└──<span class="w"> </span>...
+└──<span class="w"> </span>v0.1.0
+<span class="w">    </span>├──<span class="w"> </span>artefacts
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0.epub
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0-HTML.zip
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-v0.1.0.pdf
+<span class="w">    </span>├──<span class="w"> </span>epub
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example.epub
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>index.xhtml
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>...
+<span class="w">    </span>├──<span class="w"> </span>html
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>index.html
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>...
+<span class="w">    </span>├──<span class="w"> </span>index.html
+<span class="w">    </span>├──<span class="w"> </span>latexpdf
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>latex
+<span class="w">    </span>└──<span class="w"> </span>...
 </pre></div>
 </div>
 <p>This will be useful if you want to use an external program to interact with the build output.</p>

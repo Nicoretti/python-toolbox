@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Hosting on GitLab Pages" href="gitlab_pages.html" /><link rel="prev" title="HTML Context" href="context.html" />
 
-    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>Hosting on GitHub Pages - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -233,22 +233,22 @@
 <section id="setting-up-the-gh-pages-branch">
 <h2>Setting up the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> Branch<a class="headerlink" href="#setting-up-the-gh-pages-branch" title="Permalink to this heading">#</a></h2>
 <p>First, you need to create a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and disable Jekyll.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout --orphan gh-pages
-touch .nojekyll
-git add .nojekyll
-git commit -m <span class="s2">&quot;Disable Jekyll&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>--orphan<span class="w"> </span>gh-pages
+touch<span class="w"> </span>.nojekyll
+git<span class="w"> </span>add<span class="w"> </span>.nojekyll
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Disable Jekyll&quot;</span>
 </pre></div>
 </div>
 <p>Then, switch back to the branch you were on and build the documentation using <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir html
-sphinx-multiversion docs/ html/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>html
+sphinx-multiversion<span class="w"> </span>docs/<span class="w"> </span>html/
 </pre></div>
 </div>
 <p>If everything worked fine, you now need to switch back to your <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and commit the data there:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout gh-pages
-<span class="k">for</span> dirname <span class="k">in</span> html/*<span class="p">;</span> <span class="k">do</span> mv <span class="s2">&quot;html/</span><span class="nv">$dirname</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$dirname</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> git add <span class="s2">&quot;</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
-git commit -m <span class="s2">&quot;Added HTML docs&quot;</span>
-git push origin gh-pages
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>gh-pages
+<span class="k">for</span><span class="w"> </span>dirname<span class="w"> </span><span class="k">in</span><span class="w"> </span>html/*<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>mv<span class="w"> </span><span class="s2">&quot;html/</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added HTML docs&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages
 </pre></div>
 </div>
 <p>Now your documentation should already be online.
@@ -274,23 +274,23 @@ Just add a <code class="file docutils literal notranslate"><span class="pre">ind
 <h2>Automating documentation builds with Travis CI<a class="headerlink" href="#automating-documentation-builds-with-travis-ci" title="Permalink to this heading">#</a></h2>
 <p>You can also automate versioned builds using Travis CI.
 To do that, add this to your <code class="file docutils literal notranslate"><span class="pre">.travis.yml</span></code> file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Build documentation</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir html</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx-multiversion docs/ html/</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">script</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Build documentation</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir html</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx-multiversion docs/ html/</span>
 
-<span class="nt">before_deploy</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Add .nojekyll file and redirect from docroot to the sphinx output dir</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">touch html/.nojekyll</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp assets/gh-pages-redirect.html html/index.html</span><span class="w"></span>
+<span class="nt">before_deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Add .nojekyll file and redirect from docroot to the sphinx output dir</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">touch html/.nojekyll</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp assets/gh-pages-redirect.html html/index.html</span>
 
-<span class="nt">deploy</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Only deploy the sphinx output dir as gh-pages branch</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pages</span><span class="w"></span>
-<span class="w">  </span><span class="nt">skip_cleanup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">  </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_TOKEN</span><span class="w"></span>
-<span class="w">  </span><span class="nt">keep_history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="w">  </span><span class="nt">local_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span><span class="w"></span>
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Only deploy the sphinx output dir as gh-pages branch</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pages</span>
+<span class="w">  </span><span class="nt">skip_cleanup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_TOKEN</span>
+<span class="w">  </span><span class="nt">keep_history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">local_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span>
 </pre></div>
 </div>
 <div class="admonition seealso">

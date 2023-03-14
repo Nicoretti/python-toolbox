@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Hosting on GitHub Pages" href="github_pages.html" /><link rel="prev" title="Templates" href="templates.html" />
 
-    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>HTML Context - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -273,9 +273,9 @@
 <dd><p>An iterable that yields all <code class="docutils literal notranslate"><span class="pre">Version</span></code> objects.</p>
 <div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h3&gt;Versions&lt;/h3&gt;</span>
 <span class="x">&lt;ul&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions</span> <span class="cp">%}</span>
 <span class="x">  &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">item.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">item.name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span>
 <span class="x">&lt;/ul&gt;</span>
 </pre></div>
 </div>
@@ -287,9 +287,9 @@
 <dd><p>You can use the <code class="docutils literal notranslate"><span class="pre">branches</span></code> property of the <code class="docutils literal notranslate"><span class="pre">versions</span></code> iterable to get the <code class="docutils literal notranslate"><span class="pre">Version</span></code> objects for all branches.</p>
 <div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h3&gt;Branches&lt;/h3&gt;</span>
 <span class="x">&lt;ul&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.branches</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.branches</span> <span class="cp">%}</span>
 <span class="x">  &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">item.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">item.name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span>
 <span class="x">&lt;/ul&gt;</span>
 </pre></div>
 </div>
@@ -301,9 +301,9 @@
 <dd><p>You can use the <code class="docutils literal notranslate"><span class="pre">tags</span></code> property of the <code class="docutils literal notranslate"><span class="pre">versions</span></code> iterable to get the <code class="docutils literal notranslate"><span class="pre">Version</span></code> objects for all tags.</p>
 <div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h3&gt;Tags&lt;/h3&gt;</span>
 <span class="x">&lt;ul&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.tags</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.tags</span> <span class="cp">%}</span>
 <span class="x">  &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">item.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">item.name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span>
 <span class="x">&lt;/ul&gt;</span>
 </pre></div>
 </div>
@@ -316,9 +316,9 @@
 This is determined by the <code class="docutils literal notranslate"><span class="pre">smv_released_pattern</span></code> in the <a class="reference internal" href="configuration.html#configuration"><span class="std std-ref">Configuration</span></a>.</p>
 <div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h3&gt;Releases&lt;/h3&gt;</span>
 <span class="x">&lt;ul&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.releases</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.releases</span> <span class="cp">%}</span>
 <span class="x">  &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">item.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">item.name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span>
 <span class="x">&lt;/ul&gt;</span>
 </pre></div>
 </div>
@@ -331,9 +331,9 @@ This is determined by the <code class="docutils literal notranslate"><span class
 This is determined by the <code class="docutils literal notranslate"><span class="pre">smv_released_pattern</span></code> in the <a class="reference internal" href="configuration.html#configuration"><span class="std std-ref">Configuration</span></a>.</p>
 <div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h3&gt;In Development&lt;/h3&gt;</span>
 <span class="x">&lt;ul&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.in_development</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">versions.in_development</span> <span class="cp">%}</span>
 <span class="x">  &lt;li&gt;&lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">item.url</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">item.name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{%</span>- <span class="k">endfor</span> <span class="cp">%}</span>
 <span class="x">&lt;/ul&gt;</span>
 </pre></div>
 </div>
@@ -348,9 +348,9 @@ This is determined by the <code class="docutils literal notranslate"><span class
 <span class="sig-name descname"><span class="pre">vhasdoc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other_version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vhasdoc" title="Permalink to this definition">#</a></dt>
 <dd><p>This function is Similar to Sphinx’s <a class="reference external" href="http://www.sphinx-doc.org/en/stable/templating.html#hasdoc">hasdoc()</a> function.
 It takes <code class="docutils literal notranslate"><span class="pre">other_version</span></code> as string and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the current document exists in another version.</p>
-<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">vhasdoc</span><span class="o">(</span><span class="s1">&#39;master&#39;</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">vhasdoc</span><span class="o">(</span><span class="s1">&#39;master&#39;</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="x">This page is available in &lt;a href=&quot;../master/index.html&quot;&gt;master&lt;/a&gt;.</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -361,11 +361,11 @@ It takes <code class="docutils literal notranslate"><span class="pre">other_vers
 <dd><p>This function is Similar to Sphinx’s <a class="reference external" href="http://www.sphinx-doc.org/en/stable/templating.html#pathto">pathto()</a> function.
 It takes <code class="docutils literal notranslate"><span class="pre">other_version</span></code> as string and returns the relative URL to the current page in the other version.
 If the current page does not exist in that version, the relative URL to its <a class="reference external" href="http://www.sphinx-doc.org/en/stable/config.html?highlight=context#confval-master_doc">master_doc</a> is returned instead.</p>
-<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">vhasdoc</span><span class="o">(</span><span class="s1">&#39;master&#39;</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight-jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">vhasdoc</span><span class="o">(</span><span class="s1">&#39;master&#39;</span><span class="o">)</span> <span class="cp">%}</span>
 <span class="x">This page is also available in &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">vpathto</span><span class="o">(</span><span class="s1">&#39;master&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&quot;&gt;master&lt;/a&gt;.</span>
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
 <span class="x">Go to &lt;a href=&quot;</span><span class="cp">{{</span> <span class="nv">vpathto</span><span class="o">(</span><span class="s1">&#39;master&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x">&quot;&gt;master&lt;/a&gt; for the latest docs.</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🔧 Customization" href="customization.html" /><link rel="prev" title="🚦 Getting Started" href="getting_started.html" />
 
-    <!-- Generated with Sphinx 6.1.2 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>🏗️ Workflows (CI/CD) - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -255,7 +255,7 @@ in order to make them work follow the description bellow.</p>
 <h3>0. Determine the toolbox version<a class="headerlink" href="#determine-the-toolbox-version" title="Permalink to this heading">#</a></h3>
 <p>One of the snippets bellow, should do the trick:</p>
 <ol class="arabic">
-<li><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry show exasol-toolbox
+<li><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>show<span class="w"> </span>exasol-toolbox
 </pre></div>
 </div>
 </li>
@@ -285,26 +285,26 @@ all references to <em>&#64;main</em> with references to <em>&#64;0.1.0</em>.</p>
 </figure>
 <p>To enable this workflow, add a file with the name <em>ci.yml</em> in your <em>.github/workflows</em> folder
 and add the following content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
 
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches-ignore</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;github-pages/*&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;gh-pages/*&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;main&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;master&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">opened</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">reopened</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># “At 00:00 on every 7th day-of-month from 1 through 31.” (https://crontab.guru)</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1/7</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches-ignore</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;github-pages/*&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;gh-pages/*&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;main&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;master&quot;</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">opened</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">reopened</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># “At 00:00 on every 7th day-of-month from 1 through 31.” (https://crontab.guru)</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1/7</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span>
 
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span>
 
-<span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span><span class="w"></span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@main</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@main</span>
 </pre></div>
 </div>
 </section>
@@ -319,30 +319,30 @@ and add the following content:</p>
 </figure>
 <p>To enable this workflow, add a file with the name <em>ci-cd.yml</em> in your <em>.github/workflows</em> folder
 and add the following content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI/CD</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI/CD</span>
 
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**&#39;</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tags</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**&#39;</span>
 
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span>
 
-<span class="w">  </span><span class="nt">check-tag-version-job</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check Release Tag</span><span class="w"></span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/check-release-tag.yml@main</span><span class="w"></span>
+<span class="w">  </span><span class="nt">check-tag-version-job</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check Release Tag</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/check-release-tag.yml@main</span>
 
-<span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span><span class="w"></span>
-<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">check-tag-version-job</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@main</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">check-tag-version-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@main</span>
 
-<span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continues Delivery</span><span class="w"></span>
-<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/build-and-publish.yml@main</span><span class="w"></span>
-<span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continues Delivery</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/build-and-publish.yml@main</span>
+<span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
 </pre></div>
 </div>
 </section>
@@ -353,23 +353,23 @@ and add the following content:</p>
 </figure>
 <p>To enable this workflow, add a file with the name <em>pr-merge.yml</em> in your <em>.github/workflows</em> folder
 and add the following content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PR-Merge</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PR-Merge</span>
 
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;main&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;master&#39;</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;main&#39;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;master&#39;</span>
 
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span>
 
-<span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span><span class="w"></span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@main</span><span class="w"></span>
+<span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@main</span>
 
-<span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span><span class="w"></span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/gh-pages.yml@main</span><span class="w"></span>
+<span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/gh-pages.yml@main</span>
 </pre></div>
 </div>
 </section>
