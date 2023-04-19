@@ -339,6 +339,7 @@ and adjust the following settings to your project needs:</p>
 </li>
 </ul>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.coverage.run]</span>
+<span class="n">relative_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s">&quot;exasol&quot;</span><span class="p">,</span>
 <span class="p">]</span>
@@ -359,7 +360,8 @@ and adjust the following settings to your project needs:</p>
 
 
 <span class="k">[tool.pylint.master]</span>
-<span class="n">fail-under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.8</span>
+<span class="n">fail-under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.5</span>
+<span class="n">output-format</span><span class="o">=</span><span class="s">&quot;colorized,json:.lint.json,text:.lint.txt&quot;</span>
 
 <span class="k">[tool.pylint.format]</span>
 <span class="n">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span>
@@ -373,11 +375,6 @@ and adjust the following settings to your project needs:</p>
 <span class="w">    </span><span class="s">&quot;test.integration.*&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="n">ignore_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-
-<span class="k">[tool.scriv]</span>
-<span class="n">new_fragment_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file: templates/fragment-template.rst&quot;</span>
-<span class="n">output_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;doc/changelog.${config:format}&quot;</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;literal: pyproject.toml: tool.poetry.version&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -467,6 +464,7 @@ forward and you just can use the example <em>noxfile.py</em> bellow.</p>
 <span class="go">- build-docs -&gt; Builds the project documentation</span>
 <span class="go">- open-docs -&gt; Opens the built project documentation</span>
 <span class="go">- clean-docs -&gt; Removes the documentations build folder</span>
+<span class="go">- report -&gt; Collects and generates a metrics summary for the workspace</span>
 
 <span class="go">sessions marked with * are selected, sessions marked with - are skipped.</span>
 </pre></div>
