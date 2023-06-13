@@ -185,6 +185,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../tools.html">💻 Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">🧰 API Reference</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../design.html">📗 Design Document</a></li>
@@ -361,7 +362,7 @@ and adjust the following settings to your project needs:</p>
 
 <span class="k">[tool.pylint.master]</span>
 <span class="n">fail-under</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.5</span>
-<span class="n">output-format</span><span class="o">=</span><span class="s">&quot;colorized,json:.lint.json,text:.lint.txt&quot;</span>
+<span class="n">output-format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;colorized,json:.lint.json,text:.lint.txt&quot;</span>
 
 <span class="k">[tool.pylint.format]</span>
 <span class="n">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">88</span>
@@ -375,6 +376,9 @@ and adjust the following settings to your project needs:</p>
 <span class="w">    </span><span class="s">&quot;test.integration.*&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="n">ignore_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+
+<span class="k">[tool.poetry.scripts]</span>
+<span class="n">tbx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;exasol.toolbox.tools.tbx:CLI&#39;</span>
 </pre></div>
 </div>
 </section>

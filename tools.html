@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="👤 User Guide" href="user_guide/user_guide.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="🧰 API Reference" href="api.html" /><link rel="prev" title="Changelog" href="user_guide/modules/sphinx/multiversion/changelog.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2022.12.07 -->
-        <title>Toolbox</title>
+        <title>💻 Tools - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Toolbox</div></a>
+      <a href="index.html"><div class="brand">Toolbox</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +144,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo only-light" src="_static/light-exasol-logo.svg" alt="Light Logo"/>
@@ -159,7 +159,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1 has-children"><a class="reference internal" href="user_guide/user_guide.html">👤 User Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/getting_started.html">🚦 Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/workflows.html">🏗️ Workflows (CI/CD)</a></li>
@@ -185,7 +185,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">💻 Tools</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">💻 Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">🧰 API Reference</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="design.html">📗 Design Document</a></li>
@@ -228,68 +228,46 @@
           </label>
         </div>
         <article role="main">
-          <section id="exasol-toolbox">
-<h1>Exasol Toolbox<a class="headerlink" href="#exasol-toolbox" title="Permalink to this heading">#</a></h1>
-<a class="reference external image-reference" href="https://pypi.org/project/exasol-toolbox/"><img alt="PyPI Version" src="https://img.shields.io/pypi/v/exasol-toolbox" /></a>
-<a class="reference external image-reference" href="https://pypi.org/project/exasol-toolbox"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/exasol-toolbox" /></a>
-<a class="reference external image-reference" href="https://github.com/psf/black"><img alt="Formatter - Black" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></a>
-<a class="reference external image-reference" href="https://pycqa.github.io/isort/"><img alt="Formatter - Isort" src="https://img.shields.io/badge/imports-isort-ef8336.svg" /></a>
-<a class="reference external image-reference" href="https://github.com/PyCQA/pylint"><img alt="Pylint" src="https://img.shields.io/badge/typing-mypy-blue" /></a>
-<a class="reference external image-reference" href="https://github.com/PyCQA/pylint"><img alt="Pylint" src="https://img.shields.io/badge/pylint-7.8-green" /></a>
-<a class="reference external image-reference" href="https://opensource.org/licenses/MIT"><img alt="License" src="https://img.shields.io/pypi/l/exasol-bucketfs" /></a>
-<a class="reference external image-reference" href="https://pypi.org/project/exasol-toolbox/"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/nicoretti/python-toolbox" /></a>
-<section id="features">
-<h2>🚀 Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Centrally managed standard tasks</dt><dd><ul>
-<li><p>code formatting &amp; upgrading</p></li>
-<li><p>linting</p></li>
-<li><p>type-checking</p></li>
-<li><p>unit-tests</p></li>
-<li><p>integration-tests</p></li>
-<li><p>coverage</p></li>
-<li><p>documentation</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Centrally manged core workflows</dt><dd><ul>
-<li><p>workspace/project verification</p></li>
-<li><p>build and publish releases</p></li>
-<li><p>build and publish documentation</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Configurable &amp; Extensible</dt><dd><ul>
-<li><p>Project configuration</p></li>
-<li><p>Event hooks</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="prerequisites">
-<h2>🔌️ Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.python.org/">Python</a> &gt;= 3.8</p></li>
-</ul>
-</section>
-<section id="installation">
-<h2>💾 Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>exasol-toolbox
+          <section id="tools">
+<h1>💻 Tools<a class="headerlink" href="#tools" title="Permalink to this heading">#</a></h1>
+<section id="tbx">
+<h2>tbx<a class="headerlink" href="#tbx" title="Permalink to this heading">#</a></h2>
+<p>The <code class="code docutils literal notranslate"><span class="pre">tbx</span></code> is the main entry point for all of the toolbox specific tooling.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>$<span class="w"> </span>tbx<span class="w"> </span>--help
+
+<span class="w"> </span>Usage:<span class="w"> </span>tbx<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--install-completion<span class="w">          </span>Install<span class="w"> </span>completion<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>shell.<span class="w">             </span>│
+│<span class="w"> </span>--show-completion<span class="w">             </span>Show<span class="w"> </span>completion<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>shell,<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>it<span class="w"> </span>or<span class="w">  </span>│
+│<span class="w">                               </span>customize<span class="w"> </span>the<span class="w"> </span>installation.<span class="w">                           </span>│
+│<span class="w"> </span>--help<span class="w">                        </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                           </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>──────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>workflow<span class="w">                                                                            </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+</pre></div>
+</div>
+<section id="workflow">
+<h3>workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h3>
+<p>The workflow command helps to install and maintain GitHub workflows provided by the toolbox.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>$<span class="w"> </span>tbx<span class="w"> </span>workflow<span class="w"> </span>--help
+
+<span class="w"> </span>Usage:<span class="w"> </span>tbx<span class="w"> </span>workflow<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="o">]</span>...
+
+╭─<span class="w"> </span>Options<span class="w"> </span>───────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>--help<span class="w">          </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                         </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+╭─<span class="w"> </span>Commands<span class="w"> </span>──────────────────────────────────────────────────────────────────────────╮
+│<span class="w"> </span>diff<span class="w">      </span>Diff<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>workflow<span class="w"> </span>against<span class="w"> </span>the<span class="w"> </span>installed<span class="w"> </span>one.<span class="w">                       </span>│
+│<span class="w"> </span>install<span class="w">   </span>Installs<span class="w"> </span>the<span class="w"> </span>requested<span class="w"> </span>workflow<span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>directory.<span class="w">                </span>│
+│<span class="w"> </span>list<span class="w">      </span>List<span class="w"> </span>all<span class="w"> </span>available<span class="w"> </span>workflows.<span class="w">                                             </span>│
+│<span class="w"> </span>show<span class="w">      </span>Shows<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>workflow.<span class="w">                                                </span>│
+│<span class="w"> </span>update<span class="w">    </span>Similar<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>but<span class="w"> </span>checks<span class="w"> </span><span class="k">for</span><span class="w"> </span>existing<span class="w"> </span>workflows<span class="w"> </span>and<span class="w"> </span>shows<span class="w"> </span>diff<span class="w">       </span>│
+╰─────────────────────────────────────────────────────────────────────────────────────╯
 </pre></div>
 </div>
 </section>
-<section id="documentation">
-<h2>📚 Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
-<p>The latest documentation can be found <a class="reference external" href="https://exasol.github.io/python-toolbox/">here</a></p>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 </section>
 
@@ -298,16 +276,26 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="user_guide/user_guide.html">
+          <a class="next-page" href="api.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">👤 User Guide</div>
+                <div class="title">🧰 API Reference</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
+          <a class="prev-page" href="user_guide/modules/sphinx/multiversion/changelog.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Changelog</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -338,11 +326,11 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Exasol Toolbox</a><ul>
-<li><a class="reference internal" href="#features">🚀 Features</a></li>
-<li><a class="reference internal" href="#prerequisites">🔌️ Prerequisites</a></li>
-<li><a class="reference internal" href="#installation">💾 Installation</a></li>
-<li><a class="reference internal" href="#documentation">📚 Documentation</a></li>
+<li><a class="reference internal" href="#">💻 Tools</a><ul>
+<li><a class="reference internal" href="#tbx">tbx</a><ul>
+<li><a class="reference internal" href="#workflow">workflow</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
