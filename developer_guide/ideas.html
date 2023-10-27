@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="📗 Design Document" href="../design.html" /><link rel="prev" title="🧰 API Reference" href="../api.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="📝 Changelog" href="../changelog.html" /><link rel="prev" title="🚧 Development - Contributing" href="development.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2022.12.07 -->
-        <title>🛠 Developer Guide - Toolbox</title>
+        <title>📋 Ideas - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -191,10 +191,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">🧰 API Reference</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">🛠 Developer Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="developer_guide.html">🛠 Developer Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../design.html">📗 Design Document</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html">🚧 Development - Contributing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ideas.html">📋 Ideas</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">📋 Ideas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">📝 Changelog</a></li>
@@ -232,24 +232,75 @@
           </label>
         </div>
         <article role="main">
-          <section id="developer-guide">
-<h1>🛠 Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../design.html">📗 Design Document</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../design.html#motivation">Motivation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../design.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../design.html#design">Design</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">🚧 Development - Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development.html#setting-up-the-development-environment">Setting up the Development Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html#creating-a-release">Creating a Release</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ideas.html">📋 Ideas</a></li>
-</ul>
+          <section id="ideas">
+<h1>📋 Ideas<a class="headerlink" href="#ideas" title="Permalink to this heading">#</a></h1>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Add diagram configuration and tasks (noxfile.py + noxconfig.py + exasol.toolbox)</p>
 </div>
+<p class="todo-source">(The <a class="reference internal" href="../design.html#id1"><em>original entry</em></a> is located in /home/runner/work/python-toolbox/python-toolbox/doc/design.rst, line 149.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Add diagram of github workflows and interaction</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="../design.html#id2"><em>original entry</em></a> is located in /home/runner/work/python-toolbox/python-toolbox/doc/design.rst, line 180.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Add additional details to the <code class="code docutils literal notranslate"><span class="pre">security.Issue</span></code> type</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="../github_actions/security_issues.html#id1"><em>original entry</em></a> is located in /home/runner/work/python-toolbox/python-toolbox/doc/github_actions/security_issues.rst, line 94.)</p>
+<div class="admonition-todo admonition">
+<p class="admonition-title">Todo</p>
+<p>Consider adapting common CVE report format as input, for additional details
+<a class="reference external" href="https://github.com/CVEProject/cve-schema/blob/master/schema/v5.0/CVE_JSON_5.0_schema.json">see here</a>.</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="../github_actions/security_issues.html#id2"><em>original entry</em></a> is located in /home/runner/work/python-toolbox/python-toolbox/doc/github_actions/security_issues.rst, line 99.)</p>
+<ul class="simple">
+<li><p>Add commit hooks (version check etc.) for the toolbox itself</p></li>
+<li><dl class="simple">
+<dt>Doc(s) tasks</dt><dd><ul>
+<li><p>Add documentation on how to setup the development environment</p></li>
+<li><p>Add/Finish multiversion  documentation support</p></li>
+<li><p>Cleanup multiversion documentation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Add pre commit hook config</dt><dd><ul>
+<li><p>document how to install commit hooks</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Add common/exasol specific pre_commit_hooks</dt><dd><ul>
+<li><p>Add <a class="reference external" href="https://github.com/exasol/serial-version-uid-change-pre-commit-hook">https://github.com/exasol/serial-version-uid-change-pre-commit-hook</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Add generators for repetitive tasks</dt><dd><ul>
+<li><p>Add generator for preparing adding tool configuration(s)</p></li>
+<li><p>Add .pre-commit-config.yaml generator</p></li>
+<li><p>Add workflow generator</p></li>
+<li><p>Add issue template generator</p></li>
+<li><p>Add pr template generator</p></li>
+<li><p>Add changelog.d template generator</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Toolbox helper</dt><dd><ul>
+<li><p>update and/or generated config, workflows, etc.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Convert Todo’s list into issue(s)</p></li>
+</ul>
 </section>
 
         </article>
@@ -257,23 +308,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../design.html">
+          <a class="next-page" href="../changelog.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">📗 Design Document</div>
+                <div class="title">📝 Changelog</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../api.html">
+          <a class="prev-page" href="development.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">🧰 API Reference</div>
+                <div class="title">🚧 Development - Contributing</div>
                 
               </div>
             </a>

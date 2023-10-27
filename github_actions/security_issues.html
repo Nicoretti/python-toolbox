@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="📝 Changelog" href="../changelog.html" /><link rel="prev" title="🚧 Development - Contributing" href="development.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🧰 API Reference" href="../api.html" /><link rel="prev" title="🦺 Github Actions" href="github_actions.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2022.12.07 -->
-        <title>📋 Todo’s - Toolbox</title>
+        <title>security-issues - Toolbox</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -186,11 +186,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tools.html">💻 Tools</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="github_actions.html">🦺 Github Actions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">security-issues</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">🧰 API Reference</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="developer_guide.html">🛠 Developer Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../design.html">📗 Design Document</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html">🚧 Development - Contributing</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">📋 Todo’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guide/development.html">🚧 Development - Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guide/ideas.html">📋 Ideas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">📝 Changelog</a></li>
@@ -222,70 +226,106 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="todo-s">
-<h1>📋 Todo’s<a class="headerlink" href="#todo-s" title="Permalink to this heading">#</a></h1>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
-<p>Add diagram configuration and tasks (noxfile.py + noxconfig.py + exasol.toolbox)</p>
+          <section id="security-issues">
+<h1>security-issues<a class="headerlink" href="#security-issues" title="Permalink to this heading">#</a></h1>
+<section id="example-usage">
+<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this heading">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Report Security Issues for Repository</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># “Every day at 00:00.” (https://crontab.guru)</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+
+<span class="w">  </span><span class="nt">report_security_issues</span><span class="p">:</span>
+
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Report Security Issues</span>
+
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">issues</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SCM Checkout</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Report Security Issues</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/actions/security-issues@0.6.0/security-issues-action</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;maven&quot;</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;cat</span><span class="nv"> </span><span class="s">maven-cve-report.json&quot;</span>
+<span class="w">          </span><span class="nt">github-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+</pre></div>
 </div>
-<p class="todo-source">(The <a class="reference internal" href="../design.html#id1"><em>original entry</em></a> is located in /home/runner/work/python-toolbox/python-toolbox/doc/design.rst, line 149.)</p>
-<div class="admonition-todo admonition">
-<p class="admonition-title">Todo</p>
-<p>Add diagram of github workflows and interaction</p>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">#</a></h2>
+<p>This action exposes 3 configuration parameters <a class="reference internal" href="#command">command</a>, <a class="reference internal" href="#format">format</a> and <a class="reference internal" href="#github-token">github-token</a>, for details see
+the specific sections below.</p>
+<section id="command">
+<h3>command<a class="headerlink" href="#command" title="Permalink to this heading">#</a></h3>
+<p>Workspace command which shall be executed in order to check the project’s dependencies for CVEs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The calling workflow needs to make sure the specified command can be executed in the context of the workflow.</p>
 </div>
-<p class="todo-source">(The <a class="reference internal" href="../design.html#id2"><em>original entry</em></a> is located in /home/runner/work/python-toolbox/python-toolbox/doc/design.rst, line 180.)</p>
-<ul class="simple">
-<li><p>Add commit hooks (version check etc.) for the toolbox itself</p></li>
-<li><dl class="simple">
-<dt>Doc(s) tasks</dt><dd><ul>
-<li><p>Add documentation on how to setup the development environment</p></li>
-<li><p>Add/Finish multiversion  documentation support</p></li>
-<li><p>Cleanup multiversion documentation</p></li>
-</ul>
-</dd>
-</dl>
+</section>
+<section id="format">
+<h3>format<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h3>
+<p>Specifies converter which needs to be applied on the output of the provided command.
+Currently there are only two converters available</p>
+<ol class="arabic">
+<li><p>maven</p>
+<blockquote>
+<div><p>Converts the output of mavens oss plugin into required input format.</p>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt>Add pre commit hook config</dt><dd><ul>
-<li><p>document how to install commit hooks</p></li>
-</ul>
-</dd>
-</dl>
+<li><p>pass-through</p>
+<blockquote>
+<div><p>In case the command itself already outputs the expected input format, the format can be specified as code:<cite>pass-through</cite>.</p>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt>Add common/exasol specific pre_commit_hooks</dt><dd><ul>
-<li><p>Add <a class="reference external" href="https://github.com/exasol/serial-version-uid-change-pre-commit-hook">https://github.com/exasol/serial-version-uid-change-pre-commit-hook</a></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Add generators for repetitive tasks</dt><dd><ul>
-<li><p>Add generator for preparing adding tool configuration(s)</p></li>
-<li><p>Add .pre-commit-config.yaml generator</p></li>
-<li><p>Add workflow generator</p></li>
-<li><p>Add issue template generator</p></li>
-<li><p>Add pr template generator</p></li>
-<li><p>Add changelog.d template generator</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Toolbox helper</dt><dd><ul>
-<li><p>update and/or generated config, workflows, etc.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>Convert Todo’s list into issue(s)</p></li>
-</ul>
+</ol>
+</section>
+</section>
+<section id="input-format">
+<h2>Input Format<a class="headerlink" href="#input-format" title="Permalink to this heading">#</a></h2>
+<p>The expect intput format is jsonl (line based json), of the following form:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s2">&quot;cve&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;cve-id&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;cwe&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;cwe-id&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;multiline string&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;references&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The input format may change in the future. Therefore make sure to rather use or contribute a converter for
+a specific format rather than outputting this format by your own tooling.</p>
+</div>
+<section id="github-token">
+<h3>github-token<a class="headerlink" href="#github-token" title="Permalink to this heading">#</a></h3>
+<p>The temporary GitHub token of the workflow needs to be passed into the action (<code class="code docutils literal notranslate"><span class="pre">${{</span> <span class="pre">secrets.GITHUB_TOKEN</span> <span class="pre">}}</span></code>),
+in order to enable the action to query and created GitHub issues.</p>
+</section>
+</section>
+<section id="ideas">
+<h2>Ideas<a class="headerlink" href="#ideas" title="Permalink to this heading">#</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Add additional details to the <code class="code docutils literal notranslate"><span class="pre">security.Issue</span></code> type</p>
+</div>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Consider adapting common CVE report format as input, for additional details
+<a class="reference external" href="https://github.com/CVEProject/cve-schema/blob/master/schema/v5.0/CVE_JSON_5.0_schema.json">see here</a>.</p>
+</div>
+</section>
 </section>
 
         </article>
@@ -293,23 +333,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../changelog.html">
+          <a class="next-page" href="../api.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">📝 Changelog</div>
+                <div class="title">🧰 API Reference</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="development.html">
+          <a class="prev-page" href="github_actions.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">🚧 Development - Contributing</div>
+                <div class="title">🦺 Github Actions</div>
                 
               </div>
             </a>
@@ -331,8 +371,37 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">security-issues</a><ul>
+<li><a class="reference internal" href="#example-usage">Example Usage</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#command">command</a></li>
+<li><a class="reference internal" href="#format">format</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#input-format">Input Format</a><ul>
+<li><a class="reference internal" href="#github-token">github-token</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ideas">Ideas</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
