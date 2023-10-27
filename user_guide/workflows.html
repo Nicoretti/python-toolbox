@@ -311,11 +311,11 @@ and add the following content:</p>
 
 <span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.6.1</span>
 
 <span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.6.1</span>
 </pre></div>
 </div>
 </section>
@@ -341,23 +341,23 @@ and add the following content:</p>
 
 <span class="w">  </span><span class="nt">check-tag-version-job</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check Release Tag</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/check-release-tag.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/check-release-tag.yml@0.6.1</span>
 
 <span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">check-tag-version-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.6.1</span>
 
 <span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continues Delivery</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/build-and-publish.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/build-and-publish.yml@0.6.1</span>
 <span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
 
 <span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.6.1</span>
 </pre></div>
 </div>
 </section>
@@ -380,15 +380,15 @@ and add the following content:</p>
 
 <span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.6.1</span>
 
 <span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/gh-pages.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/gh-pages.yml@0.6.1</span>
 
 <span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.5.0</span>
+<span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.6.1</span>
 </pre></div>
 </div>
 </section>
