@@ -295,10 +295,8 @@ Currently there are only two converters available</p>
 </div></blockquote>
 </li>
 </ol>
-</section>
-</section>
 <section id="input-format">
-<h2>Input Format<a class="headerlink" href="#input-format" title="Permalink to this heading">#</a></h2>
+<h4>Input Format<a class="headerlink" href="#input-format" title="Permalink to this heading">#</a></h4>
 <p>The expect intput format is jsonl (line based json), of the following form:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s2">&quot;cve&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;cve-id&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;cwe&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;cwe-id&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;multiline string&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;references&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;url&gt;&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="p">}</span>
 </pre></div>
@@ -308,10 +306,23 @@ Currently there are only two converters available</p>
 <p>The input format may change in the future. Therefore make sure to rather use or contribute a converter for
 a specific format rather than outputting this format by your own tooling.</p>
 </div>
+</section>
+</section>
 <section id="github-token">
 <h3>github-token<a class="headerlink" href="#github-token" title="Permalink to this heading">#</a></h3>
 <p>The temporary GitHub token of the workflow needs to be passed into the action (<code class="code docutils literal notranslate"><span class="pre">${{</span> <span class="pre">secrets.GITHUB_TOKEN</span> <span class="pre">}}</span></code>),
 in order to enable the action to query and created GitHub issues.</p>
+</section>
+<section id="project">
+<h3>project<a class="headerlink" href="#project" title="Permalink to this heading">#</a></h3>
+<p>Title of the GitHub-Project the created issue(s) shall be associated with (default = None).
+To determine the title of an project you can use the GitHub-CLI, see example below.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gh<span class="w"> </span>project<span class="w"> </span>list<span class="w"> </span>--owner<span class="w"> </span>exasol
+
+NUMBER<span class="w">  </span>TITLE<span class="w">                             </span>STATE<span class="w">  </span>ID
+...
+</pre></div>
+</div>
 </section>
 </section>
 <section id="ideas">
@@ -387,11 +398,12 @@ in order to enable the action to query and created GitHub issues.</p>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
 <li><a class="reference internal" href="#configuration">Configuration</a><ul>
 <li><a class="reference internal" href="#command">command</a></li>
-<li><a class="reference internal" href="#format">format</a></li>
+<li><a class="reference internal" href="#format">format</a><ul>
+<li><a class="reference internal" href="#input-format">Input Format</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#input-format">Input Format</a><ul>
 <li><a class="reference internal" href="#github-token">github-token</a></li>
+<li><a class="reference internal" href="#project">project</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ideas">Ideas</a></li>
