@@ -197,7 +197,20 @@
 <li class="toctree-l2"><a class="reference internal" href="ideas.html">📋 Ideas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">📝 Changelog</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../changes/changelog.html">📝 Changes</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changes/unreleased.html">Unreleased</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.8.0.html">0.8.0 - 2024-02-07</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.7.0.html">0.7.0 - 2024-01-26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.6.2.html">0.6.2 - 2023-11-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.6.1.html">0.6.1 - 2023-10-27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.6.0.html">0.6.0 - 2023-10-27</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.5.0.html">0.5.0 - 2023-10-12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.4.0.html">0.4.0 - 2023-04-19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.3.0.html">0.3.0 - 2022-12-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.2.0.html">0.2.0 - 2022-12-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changes/changes_0.1.0.html">0.1.0 - 2022-11-25</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -234,47 +247,35 @@
         <article role="main">
           <section id="development-contributing">
 <h1>🚧 Development - Contributing<a class="headerlink" href="#development-contributing" title="Permalink to this heading">#</a></h1>
-<section id="setting-up-the-development-environment">
-<h2>Setting up the Development Environment<a class="headerlink" href="#setting-up-the-development-environment" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id1">
-<a class="reference external image-reference" href="https://imgflip.com/i/2a7gqa"><img alt="nothing to see here" src="../_images/nothing-to-see-here.png" /></a>
-<figcaption>
-<p><span class="caption-text">source: <a class="reference external" href="https://imgflip.com/">imgflip.com</a></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
 <section id="creating-a-release">
 <h2>Creating a Release<a class="headerlink" href="#creating-a-release" title="Permalink to this heading">#</a></h2>
-<section id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
-<ul>
-<li><p>Change log needs to be up to date</p></li>
-<li><p>Latest change log version needs to match project and package version</p></li>
-<li><p>Release tag needs to match package, changelog and project version</p>
-<dl class="simple">
-<dt>For Example:</dt><dd><ul class="simple">
-<li><p>Tag: 0.4.0</p></li>
-<li><p>Changelog: changes_0.4.0.md</p></li>
-<li><p>`poetry version -s`: 0.4.0</p></li>
+<section id="prepare-the-release">
+<h3>Prepare the Release<a class="headerlink" href="#prepare-the-release" title="Permalink to this heading">#</a></h3>
+<p>To prepare for a release, a pull request with the following parameters needs to be created:</p>
+<ul class="simple">
+<li><p>Updated version numbers</p></li>
+<li><p>Updated the changelog</p></li>
+<li><p>Updated workflow templates (not automated yet)</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-</ul>
+<p>This can be achieved by running the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nox<span class="w"> </span>-s<span class="w"> </span>prepare-release<span class="w"> </span>--<span class="w"> </span>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;
+</pre></div>
+</div>
+<p>Replace <cite>&lt;major&gt;</cite>, <cite>&lt;minor&gt;</cite>, and <cite>&lt;patch&gt;</cite> with the appropriate version numbers.
+Once the PR is successfully merged, the release can be triggered (see next section).</p>
 </section>
 <section id="triggering-the-release">
 <h3>Triggering the Release<a class="headerlink" href="#triggering-the-release" title="Permalink to this heading">#</a></h3>
-<p>In order to trigger a release a new tag must be pushed to Github.
-For further details see: <cite>.github/workflows/ci-cd.yml</cite>.</p>
+<p>To trigger a release, a new tag must be pushed to GitHub. For further details, see <cite>.github/workflows/ci-cd.yml</cite>.</p>
 <ol class="arabic">
-<li><p>Create a local tag with the appropriate version number</p>
+<li><p>Create a local tag with the appropriate version number:</p>
 <blockquote>
 <div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>tag<span class="w"> </span>x.y.z
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p>Push the tag to Github</p>
+<li><p>Push the tag to GitHub:</p>
 <blockquote>
 <div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>x.y.z
 </pre></div>
@@ -379,9 +380,8 @@ For further details see: <cite>.github/workflows/ci-cd.yml</cite>.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">🚧 Development - Contributing</a><ul>
-<li><a class="reference internal" href="#setting-up-the-development-environment">Setting up the Development Environment</a></li>
 <li><a class="reference internal" href="#creating-a-release">Creating a Release</a><ul>
-<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#prepare-the-release">Prepare the Release</a></li>
 <li><a class="reference internal" href="#triggering-the-release">Triggering the Release</a></li>
 <li><a class="reference internal" href="#what-to-do-if-the-release-failed">What to do if the release failed?</a><ul>
 <li><a class="reference internal" href="#the-release-failed-during-pre-release-checks">The release failed during pre-release checks</a></li>
