@@ -290,7 +290,7 @@ It should be available to the repository either as Organization-, Repository- or
 </section>
 <section id="add-the-standard-workflows-to-your-project">
 <h3>2. Add the standard workflows to your project<a class="headerlink" href="#add-the-standard-workflows-to-your-project" title="Permalink to this heading">#</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tbox<span class="w"> </span>workflow<span class="w"> </span>install<span class="w"> </span>all
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tbx<span class="w"> </span>workflow<span class="w"> </span>install<span class="w"> </span>all
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -362,7 +362,7 @@ and add the following content:</p>
 <span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.6.2</span>
 
 <span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continues Delivery</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continuous Delivery</span>
 <span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/build-and-publish.yml@0.6.2</span>
 <span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
