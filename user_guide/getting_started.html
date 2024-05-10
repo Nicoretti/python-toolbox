@@ -194,6 +194,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../developer_guide/developer_guide.html">🛠 Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../design.html">📗 Design Document</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developer_guide/development.html">🚧 Development - Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_guide/plugins.html">🔗 Plugin Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developer_guide/ideas.html">📋 Ideas</a></li>
 </ul>
 </li>
@@ -290,18 +291,16 @@ which is required to to provide the following attributes:</p>
 </li>
 </ul>
 <p>Alternatively you can use the <em>noxconfig.py</em> file bellow and adjust the value of the attributes if needed:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be aware that the plugin definitions are completely optional. For further details on plugins, see the customization section.</p>
+</div>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Configuration for nox based task runner&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">Any</span><span class="p">,</span>
-    <span class="n">Iterable</span><span class="p">,</span>
-    <span class="n">MutableMapping</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">nox</span> <span class="kn">import</span> <span class="n">Session</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
 
 <span class="kn">from</span> <span class="nn">exasol.toolbox.nox.plugin</span> <span class="kn">import</span> <span class="n">hookimpl</span>
 <span class="kn">from</span> <span class="nn">exasol.toolbox.tools.replace_version</span> <span class="kn">import</span> <span class="n">update_workflow</span>
@@ -322,8 +321,8 @@ which is required to to provide the following attributes:</p>
             <span class="n">update_workflow</span><span class="p">(</span><span class="n">workflow</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
 
     <span class="nd">@hookimpl</span>
-    <span class="k">def</span> <span class="nf">prepare_release_add_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">add</span><span class="p">):</span>
-        <span class="n">add</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflows</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">prepare_release_add_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflows</span>
 
 
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -335,20 +334,6 @@ which is required to to provide the following attributes:</p>
     <span class="n">version_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;exasol&quot;</span> <span class="o">/</span> <span class="s2">&quot;toolbox&quot;</span> <span class="o">/</span> <span class="s2">&quot;version.py&quot;</span>
     <span class="n">path_filters</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="s2">&quot;.eggs&quot;</span><span class="p">,</span> <span class="s2">&quot;venv&quot;</span><span class="p">,</span> <span class="s2">&quot;metrics-schema&quot;</span><span class="p">)</span>
     <span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span><span class="n">UpdateTemplates</span><span class="p">]</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">pre_integration_tests_hook</span><span class="p">(</span>
-        <span class="n">_session</span><span class="p">:</span> <span class="n">Session</span><span class="p">,</span> <span class="n">_config</span><span class="p">:</span> <span class="n">Config</span><span class="p">,</span> <span class="n">_context</span><span class="p">:</span> <span class="n">MutableMapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement if project specific behaviour is required&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="kc">True</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">post_integration_tests_hook</span><span class="p">(</span>
-        <span class="n">_session</span><span class="p">:</span> <span class="n">Session</span><span class="p">,</span> <span class="n">_config</span><span class="p">:</span> <span class="n">Config</span><span class="p">,</span> <span class="n">_context</span><span class="p">:</span> <span class="n">MutableMapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement if project specific behaviour is required&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="kc">True</span>
 
 
 <span class="n">PROJECT_CONFIG</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
