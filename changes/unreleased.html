@@ -84,7 +84,14 @@ data-aria-dark="Switch to auto color mode">
     <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
       <i class="i-lucide close"></i>
     </button>
-    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4">
+  <div class="localtoc">
+    <h3>On this page</h3>
+    <ul>
+<li><a class="reference internal" href="#added">&#10024; Added</a></li>
+</ul>
+
+  </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
     </div>
   </aside>
   <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
@@ -131,6 +138,32 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue" role="main">
           <section id="unreleased">
 <h1>Unreleased<a class="headerlink" href="#unreleased" title="Permalink to this heading">¶</a></h1>
+<section id="added">
+<h2>✨ Added<a class="headerlink" href="#added" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p><strong>Added Support for Argument Forwarding to Test-Related Nox Tasks</strong></p>
+<p><strong>Overview:</strong>
+With this new feature, it is now possible to forward additional arguments to the application (pytest) that executes the tests.</p>
+<p>For example this feature now allows for easy execution of a subset of tests using pytest’s <code class="docutils literal notranslate"><span class="pre">-k</span></code> expression selection or <code class="docutils literal notranslate"><span class="pre">-m</span></code> marker selection (see usage examples below).</p>
+<p>The forwarding will work for the following Nox tasks:</p>
+<ul class="simple">
+<li><p>unit-tests</p></li>
+<li><p>integration-tests</p></li>
+<li><p>coverage</p></li>
+</ul>
+<p><strong>Usage:</strong></p>
+<p>To prepare a release, simply execute a command in your terminal as shown in the examples below:</p>
+<p>Filter tests based on pytest markers:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-s<span class="w"> </span>unit-tests<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>fast<span class="w"> </span>
+</span></pre></div>
+</div>
+<p>Filter tests based on pytest expressions:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-s<span class="w"> </span>unit-tests<span class="w"> </span>--<span class="w"> </span>-k<span class="w"> </span>smoke_test<span class="w"> </span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+</section>
 </section>
 
         </article>
