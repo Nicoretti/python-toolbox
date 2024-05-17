@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Unreleased - Toolbox</title>
-    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="0.12.0 - 2024-05-17" href="changes_0.12.0.html" /><link rel="prev" title="Changelog" href="changelog.html" />
+      <title>0.12.0 - 2024-05-17 - Toolbox</title>
+    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="0.11.0 - 2024-05-17" href="changes_0.11.0.html" /><link rel="prev" title="Unreleased" href="unreleased.html" />
 
   <script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css" />
     
-    <meta property="og:type" content="website"/><meta property="og:title" content="Unreleased"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="0.12.0 - 2024-05-17"/>
 <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="document"><div class="sy-head">
@@ -84,7 +84,15 @@ data-aria-dark="Switch to auto color mode">
     <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
       <i class="i-lucide close"></i>
     </button>
-    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4">
+  <div class="localtoc">
+    <h3>On this page</h3>
+    <ul>
+<li><a class="reference internal" href="#fixed">&#128030; Fixed</a></li>
+<li><a class="reference internal" href="#added">&#10024; Added</a></li>
+</ul>
+
+  </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
     </div>
   </aside>
   <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
@@ -112,7 +120,7 @@ data-aria-dark="Switch to auto color mode">
       </li>
       
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Unreleased</strong>
+        <strong itemprop="name">0.12.0 - 2024-05-17</strong>
         <meta itemprop="position" content="3" />
       </li>
       
@@ -129,8 +137,40 @@ data-aria-dark="Switch to auto color mode">
     <div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="unreleased">
-<h1>Unreleased<a class="headerlink" href="#unreleased" title="Permalink to this heading">¶</a></h1>
+          <section id="id1">
+<h1>0.12.0 - 2024-05-17<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="fixed">
+<h2>🐞 Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Added missing artifact uploads to checks.yml</p></li>
+</ul>
+</section>
+<section id="added">
+<h2>✨ Added<a class="headerlink" href="#added" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p><strong>Added Support for Argument Forwarding to Test-Related Nox Tasks</strong></p>
+<p><strong>Overview:</strong>
+With this new feature, it is now possible to forward additional arguments to the application (pytest) that executes the tests.</p>
+<p>For example this feature now allows for easy execution of a subset of tests using pytest’s <code class="docutils literal notranslate"><span class="pre">-k</span></code> expression selection or <code class="docutils literal notranslate"><span class="pre">-m</span></code> marker selection (see usage examples below).</p>
+<p>The forwarding will work for the following Nox tasks:</p>
+<ul class="simple">
+<li><p>unit-tests</p></li>
+<li><p>integration-tests</p></li>
+<li><p>coverage</p></li>
+</ul>
+<p><strong>Usage:</strong></p>
+<p>To prepare a release, simply execute a command in your terminal as shown in the examples below:</p>
+<p>Filter tests based on pytest markers:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-s<span class="w"> </span>unit-tests<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>fast<span class="w"> </span>
+</span></pre></div>
+</div>
+<p>Filter tests based on pytest expressions:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-s<span class="w"> </span>unit-tests<span class="w"> </span>--<span class="w"> </span>-k<span class="w"> </span>smoke_test<span class="w"> </span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -143,21 +183,21 @@ data-aria-dark="Switch to auto color mode">
         
         <div class="navigation flex print:hidden">
   <div class="navigation-prev">
-    <a href="changelog.html">
+    <a href="unreleased.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
         <span>Previous</span>
         
-        <div class="title">Changelog</div>
+        <div class="title">Unreleased</div>
         
       </div>
     </a>
   </div>
   <div class="navigation-next">
-    <a href="changes_0.12.0.html">
+    <a href="changes_0.11.0.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">0.12.0 - 2024-05-17</div>
+        <div class="title">0.11.0 - 2024-05-17</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>
