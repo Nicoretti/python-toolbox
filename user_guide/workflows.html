@@ -226,10 +226,11 @@ and add the following content:</p>
 </span><span data-line="18"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
 </span><span data-line="19"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
 </span><span data-line="20"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="21">
-</span><span data-line="22"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="23"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="24"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
+</span><span data-line="21"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
+</span><span data-line="22">
+</span><span data-line="23"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="24"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="25"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
 </span></pre></div>
 </div>
 </section>
@@ -261,17 +262,18 @@ and add the following content:</p>
 </span><span data-line="15"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
 </span><span data-line="16"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">check-tag-version-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
 </span><span data-line="17"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="18">
-</span><span data-line="19"><span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
-</span><span data-line="20"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continuous Delivery</span>
-</span><span data-line="21"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="22"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/build-and-publish.yml</span>
-</span><span data-line="23"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
-</span><span data-line="24"><span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
-</span><span data-line="25">
-</span><span data-line="26"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="27"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="28"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
+</span><span data-line="18"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
+</span><span data-line="19">
+</span><span data-line="20"><span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
+</span><span data-line="21"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continuous Delivery</span>
+</span><span data-line="22"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="23"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/build-and-publish.yml</span>
+</span><span data-line="24"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
+</span><span data-line="25"><span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
+</span><span data-line="26">
+</span><span data-line="27"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="28"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="29"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
 </span></pre></div>
 </div>
 </section>
@@ -295,14 +297,15 @@ and add the following content:</p>
 </span><span data-line="11"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
 </span><span data-line="12"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
 </span><span data-line="13"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="14">
-</span><span data-line="15"><span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
-</span><span data-line="16"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
-</span><span data-line="17"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/gh-pages.yml</span>
-</span><span data-line="18">
-</span><span data-line="19"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="20"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="21"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
+</span><span data-line="14"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
+</span><span data-line="15">
+</span><span data-line="16"><span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
+</span><span data-line="17"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
+</span><span data-line="18"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/gh-pages.yml</span>
+</span><span data-line="19">
+</span><span data-line="20"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="21"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="22"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
 </span></pre></div>
 </div>
 </section>
