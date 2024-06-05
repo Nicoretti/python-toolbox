@@ -1,15 +1,10 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-accent-color="grass" data-content_root="">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Changelog - Toolbox</title>
-    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Unreleased" href="unreleased.html" /><link rel="prev" title="FAQ" href="../faq.html" />
-
-  <script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Changelog - Toolbox</title><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Unreleased" href="unreleased.html" /><link rel="prev" title="FAQ" href="../faq.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
-    setColorMode(sessionStorage._theme||"auto");
+    setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/shibuya.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -19,39 +14,31 @@
     <meta property="og:type" content="website"/><meta property="og:title" content="Changelog"/>
 <meta name="twitter:card" content="summary"/>
   </head>
-<body><div class="document"><div class="sy-head">
+<body><div class="sy-head">
   <div class="sy-head-blur"></div>
   <div class="sy-head-inner sy-container mx-auto">
-    <a class="sy-head-brand mr-4" href="../index.html">
-      <img class="light-logo" src="../_static/light-exasol-logo.svg" alt="Exasol Toolbox" height="28" />
-      <img class="dark-logo" src="../_static/dark-exasol-logo.svg" alt="Exasol Toolbox" height="28" />
+    <a class="sy-head-brand" href="../index.html">
+      <img class="light-logo" src="../_static/light-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <img class="dark-logo" src="../_static/dark-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
       <strong>Exasol Toolbox</strong>
     </a>
-    <div class="sy-head-links" id="NavLinks">
-      <nav class="sy-head-nav"></nav>
-      <div class="sy-head-extra flex items-center print:hidden">
-        
-<form class="searchbox flex items-center" action="../search.html" method="get">
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
-</form>
-        
-        
-        <div class="sy-head-socials flex items-center">
+</form><div class="sy-head-socials flex items-center">
     <a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
       <i class="i-simpleicons github"></i>
     </a>
-</div>
-      </div>
+</div></div>
     </div>
-    <div class="sy-head-actions flex items-center shrink-0 print:hidden">
-      <button class="js-theme theme-switch flex items-center"
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
 data-aria-auto="Switch to light color mode"
 data-aria-light="Switch to dark color mode"
 data-aria-dark="Switch to auto color mode">
 <i class="i-lucide theme-icon"></i>
-</button>
-      <button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="NavLinks" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
           <span class="hamburger_2 -translate-x-2"></span>
@@ -76,43 +63,31 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 
         </div>
-      </div>
-      
-    </div>
+      </div></div>
   </aside>
   <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
   <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
     <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
       <i class="i-lucide close"></i>
     </button>
-    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
-    </div>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
   <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
-  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
-    <div class="sy-breadcrumbs" role="navigation">
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
   <div class="sy-breadcrumbs-inner flex items-center">
     <div class="md:hidden mr-3">
       <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
         <i class="i-lucide menu"></i>
       </button>
     </div>
-    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList">
-      
-      
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="../index.html"><span itemprop="name">Exasol Toolbox</span></a>
         <span>/</span>
         <meta itemprop="position" content="1" />
-      </li>
-      
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <strong itemprop="name">Changelog</strong>
         <meta itemprop="position" content="2" />
-      </li>
-      
-      
-    </ol>
+      </li></ol>
     <div class="xl:hidden ml-1">
       <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
         aria-expanded="false">
@@ -120,8 +95,7 @@ data-aria-dark="Switch to auto color mode">
       </button>
     </div>
   </div>
-</div>
-    <div class="flex flex-col break-words justify-between">
+</div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
           <section id="changelog">
@@ -147,27 +121,18 @@ data-aria-dark="Switch to auto color mode">
 </div>
 </section>
 
-        </article>
-        <button class="back-to-top" type="button">
+        </article><button class="back-to-top" type="button">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
   </svg>
   <span>Back to top</span>
-</button>
-        
-        <div class="navigation flex print:hidden">
-  <div class="navigation-prev">
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
     <a href="../faq.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span>
-        
-        <div class="title"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-question" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path></svg> FAQ</div>
-        
-      </div>
+        <span>Previous</span><div class="title"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-question" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path></svg> FAQ</div></div>
     </a>
-  </div>
-  <div class="navigation-next">
+  </div><div class="navigation-next">
     <a href="unreleased.html">
       <div class="page-info">
         <span>Next</span>
@@ -175,16 +140,12 @@ data-aria-dark="Switch to auto color mode">
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>
-  </div>
-</div>
-        
-      </div>
+  </div></div></div>
     </div>
   </main>
 </div>
 <footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
-    
     <div class="sy-foot-reserved md:flex justify-between items-center">
       <div class="sy-foot-copyright"><p>2022, Exasol</p>
   
@@ -197,18 +158,15 @@ data-aria-dark="Switch to auto color mode">
   </p>
 </div>
       <div class="sy-foot-socials">
-  <a href="https://github.com/exasol/python-toolbox" aria-label="GitHub"><i class="i-simpleicons github"></i></a>
-</div>
+<a href="https://github.com/exasol/python-toolbox" aria-label="GitHub"><i class="i-simpleicons github"></i></a></div>
     </div>
   </div>
-</footer></div>
+</footer>
       <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
       <script src="../_static/doctools.js"></script>
       <script src="../_static/sphinx_highlight.js"></script>
       <script src="../_static/clipboard.min.js"></script>
       <script src="../_static/copybutton.js"></script>
       <script src="../_static/design-tabs.js"></script>
-      <script src="../_static/shibuya.js"></script>
-    
-</body>
+      <script src="../_static/shibuya.js"></script></body>
 </html>
