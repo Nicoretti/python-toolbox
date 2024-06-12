@@ -263,20 +263,35 @@ and add the following content:</p>
 </span><span data-line="8">
 </span><span data-line="9"><span class="nt">jobs</span><span class="p">:</span>
 </span><span data-line="10">
-</span><span data-line="11"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
-</span><span data-line="12"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
-</span><span data-line="13"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="14"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
-</span><span data-line="15">
-</span><span data-line="16"><span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
-</span><span data-line="17"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
-</span><span data-line="18"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/gh-pages.yml</span>
-</span><span data-line="19">
-</span><span data-line="20"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="21"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="22"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
+</span><span data-line="11"><span class="w">  </span><span class="c1"># This job can be removed if certain preconditions are met. See</span>
+</span><span data-line="12"><span class="w">  </span><span class="c1"># https://exasol.github.io/python-toolbox/user_guide/workflows.html#pr-merge-workflow</span>
+</span><span data-line="13">
+</span><span data-line="14"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+</span><span data-line="15"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+</span><span data-line="16"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
+</span><span data-line="17"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
+</span><span data-line="18">
+</span><span data-line="19"><span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
+</span><span data-line="20"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
+</span><span data-line="21"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/gh-pages.yml</span>
+</span><span data-line="22">
+</span><span data-line="23"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="24"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="25"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
 </span></pre></div>
 </div>
+<p>In order to make merging to the main branch faster you can skip running the
+tests again in this workflow.</p>
+<p>Before removing the <code class="docutils literal notranslate"><span class="pre">ci-job</span></code> from the workflow by please make sure the
+following prerequisites are met, as in some circumstances these tests might be
+the last or even only chance to detect problems.</p>
+<ul class="simple">
+<li><p>GitHub branch protection for main branch is properly configured.</p></li>
+<li><p>All dependencies are pointing to proper pypi packages in specific versions, i.e. no
+dependencies to the main branch of other git repositories.</p></li>
+<li><p>Development branches are short-lived and merged to main branch soon after
+finishing tests in the context of a pull request.</p></li>
+</ul>
 </section>
 </section>
 </section>
