@@ -71,7 +71,8 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#preparing-the-project">Preparing the Project</a><ul>
+<li><a class="reference internal" href="#create-a-new-project-with-exasol-toolbox-support">Create a New Project with Exasol-Toolbox Support</a></li>
+<li><a class="reference internal" href="#integrating-exasol-toolbox-into-your-project">Integrating Exasol-Toolbox into your Project</a><ul>
 <li><a class="reference internal" href="#add-the-toolbox-as-dependency">1. Add the toolbox as dependency</a></li>
 <li><a class="reference internal" href="#fine-tune-the-gitignore-file">2. Fine tune the .gitignore file</a></li>
 <li><a class="reference internal" href="#provide-a-project-configuration">3. Provide a project configuration</a><ul>
@@ -121,8 +122,64 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue" role="main">
           <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
-<section id="preparing-the-project">
-<h2>Preparing the Project<a class="headerlink" href="#preparing-the-project" title="Permalink to this heading">¶</a></h2>
+<p>Your usage of the <cite>exasol-toolbox</cite> will likely fall into one of two scenarios:</p>
+<ol class="arabic">
+<li><p>Integration into an existing project.</p>
+<blockquote>
+<div><p>If this is your situation, proceed to the section titled <a class="reference internal" href="#existing"><span class="std std-ref">Integrating Exasol-Toolbox into your Project</span></a>.</p>
+</div></blockquote>
+</li>
+<li><p>Creation of a new project.</p>
+<blockquote>
+<div><p>If you are starting a new project, please read the section <a class="reference internal" href="#new"><span class="std std-ref">Create a New Project with Exasol-Toolbox Support</span></a>.</p>
+</div></blockquote>
+</li>
+</ol>
+<section id="create-a-new-project-with-exasol-toolbox-support">
+<span id="new"></span><h2>Create a New Project with Exasol-Toolbox Support<a class="headerlink" href="#create-a-new-project-with-exasol-toolbox-support" title="Permalink to this heading">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To establish a new project with toolbox support, you need to have <a class="reference external" href="https://www.cookiecutter.io">Cookiecutter</a> installed.</p>
+<dl class="simple">
+<dt><strong>TL;DR:</strong></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">pipx</span> <span class="pre">install</span> <span class="pre">cookiecutter</span></code></p>
+</dd>
+</dl>
+</div>
+<p><strong>1. Create a new project</strong></p>
+<p>Use the following command to create a new project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">cookiecutter<span class="w"> </span>https://github.com/exasol/python-toolbox.git<span class="w"> </span>--directory<span class="w"> </span>project-template
+</span></pre></div>
+</div>
+<p><strong>2. Follow the interactive project setup prompt</strong></p>
+<p><strong>3. Bootstrapp the development environment</strong></p>
+<p>Navigate to the directory of the newly created project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nb">cd</span><span class="w"> </span>&lt;your-project-name&gt;
+</span></pre></div>
+</div>
+<p>Generate a poetry environment for the project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">poetry<span class="w"> </span>shell
+</span></pre></div>
+</div>
+<p>Install all necessary project and development dependencies for the project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">poetry<span class="w"> </span>install
+</span></pre></div>
+</div>
+<p><strong>4. Start using your project</strong></p>
+<p>List all available nox tasks:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-l
+</span></pre></div>
+</div>
+<p>Build and open the documentation:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-s<span class="w"> </span>build-docs<span class="w">  </span>open-docs
+</span></pre></div>
+</div>
+<p>Execute the unit tests of the project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">nox<span class="w"> </span>-s<span class="w"> </span>unit-tests
+</span></pre></div>
+</div>
+</section>
+<section id="integrating-exasol-toolbox-into-your-project">
+<span id="existing"></span><h2>Integrating Exasol-Toolbox into your Project<a class="headerlink" href="#integrating-exasol-toolbox-into-your-project" title="Permalink to this heading">¶</a></h2>
 <section id="add-the-toolbox-as-dependency">
 <h3>1. Add the toolbox as dependency<a class="headerlink" href="#add-the-toolbox-as-dependency" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">poetry<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span>dev<span class="w"> </span>exasol-toolbox
@@ -204,9 +261,9 @@ which is required to to provide the following attributes:</p>
 </span><span data-line="35">    <span class="n">root</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
 </span><span data-line="36">    <span class="n">doc</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;doc&quot;</span>
 </span><span data-line="37">    <span class="n">version_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;exasol&quot;</span> <span class="o">/</span> <span class="s2">&quot;toolbox&quot;</span> <span class="o">/</span> <span class="s2">&quot;version.py&quot;</span>
-</span><span data-line="38">    <span class="n">path_filters</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="s2">&quot;.eggs&quot;</span><span class="p">,</span> <span class="s2">&quot;venv&quot;</span><span class="p">,</span> <span class="s2">&quot;metrics-schema&quot;</span><span class="p">)</span>
+</span><span data-line="38">    <span class="n">path_filters</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="s2">&quot;.eggs&quot;</span><span class="p">,</span> <span class="s2">&quot;venv&quot;</span><span class="p">,</span> <span class="s2">&quot;metrics-schema&quot;</span><span class="p">,</span> <span class="s2">&quot;project-template&quot;</span><span class="p">)</span>
 </span><span data-line="39">    <span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span><span class="n">UpdateTemplates</span><span class="p">]</span>
-</span><span data-line="40">
+</span><span data-line="40">    
 </span><span data-line="41">
 </span><span data-line="42"><span class="n">PROJECT_CONFIG</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
 </span></pre></div>
