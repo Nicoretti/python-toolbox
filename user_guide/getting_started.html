@@ -146,8 +146,12 @@ data-aria-dark="Switch to auto color mode">
 </dl>
 </div>
 <p><strong>1. Create a new project</strong></p>
+<p>Cookiecutter will create the project within the current directory. So if you
+usually checkout all your GitHub repos in <code class="docutils literal notranslate"><span class="pre">~/git</span></code> you could use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/git</span></code>
+before calling cookiecutter.</p>
 <p>Use the following command to create a new project:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">cookiecutter<span class="w"> </span>https://github.com/exasol/python-toolbox.git<span class="w"> </span>--directory<span class="w"> </span>project-template
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">cookiecutter<span class="w"> </span>https://github.com/exasol/python-toolbox.git<span class="w"> </span><span class="se">\</span>
+</span><span data-line="2"><span class="w">  </span>--directory<span class="w"> </span>project-template
 </span></pre></div>
 </div>
 <p><strong>2. Follow the interactive project setup prompt</strong></p>
