@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="grass" data-content_root="">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Unreleased - Toolbox</title><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="0.14.0 - 2024-07-02" href="changes_0.14.0.html" /><link rel="prev" title="Changelog" href="changelog.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Unreleased - Toolbox</title><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="0.15.0 - 2024-09-27" href="changes_0.15.0.html" /><link rel="prev" title="Changelog" href="changelog.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -101,6 +101,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="../faq.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-question" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path></svg> FAQ</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="changelog.html">Changelog</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Unreleased</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changes_0.15.0.html">0.15.0 - 2024-09-27</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changes_0.14.0.html">0.14.0 - 2024-07-02</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changes_0.13.0.html">0.13.0 - 2024-06-06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changes_0.12.0.html">0.12.0 - 2024-05-17</a></li>
@@ -129,14 +130,7 @@ data-aria-dark="Switch to auto color mode">
     <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
       <i class="i-lucide close"></i>
     </button>
-    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#added">&#10024; Added</a></li>
-<li><a class="reference internal" href="#bug-fixes">&#128030; Bug Fixes</a></li>
-<li><a class="reference internal" href="#refactorings">&#9874;&#65039; Refactorings</a></li>
-<li><a class="reference internal" href="#documentation">&#128218; Documentation</a></li>
-<li><a class="reference internal" href="#internal">&#128297; Internal</a></li>
-</ul>
-</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
   <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
   <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
@@ -170,43 +164,6 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue" role="main">
           <section id="unreleased">
 <h1>Unreleased<a class="headerlink" href="#unreleased" title="Permalink to this heading">¶</a></h1>
-<section id="added">
-<h2>✨ Added<a class="headerlink" href="#added" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Added cookiecutter-template for creating new project</p></li>
-<li><p><a class="reference external" href="https://github.com/exasol/python-toolbox/issues/246">#246</a>: Added standard branch protection workflow</p></li>
-</ul>
-</section>
-<section id="bug-fixes">
-<h2>🐞 Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/exasol/python-toolbox/issues/181">#181</a>: Updated metrics related workflows</p></li>
-<li><p><a class="reference external" href="https://github.com/exasol/python-toolbox/issues/225">#225</a>: Fixed broken reference to version file in workflow</p></li>
-<li><p>Fixed coverage for empty project</p></li>
-</ul>
-</section>
-<section id="refactorings">
-<h2>⚒️ Refactorings<a class="headerlink" href="#refactorings" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/exasol/python-toolbox/issues/219">#219</a>: Updated project template configuration</p></li>
-<li><p>Updated actions/checkout to v4</p></li>
-</ul>
-</section>
-<section id="documentation">
-<h2>📚 Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Add Python Styleguide</p></li>
-<li><p>Add Issue Guide</p></li>
-<li><p>Updated User Documentation</p></li>
-</ul>
-</section>
-<section id="internal">
-<h2>🔩 Internal<a class="headerlink" href="#internal" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Update depdency constraints</p></li>
-<li><p>Relock dependencies</p></li>
-</ul>
-</section>
 </section>
 
         </article><button class="back-to-top" type="button">
@@ -221,10 +178,10 @@ data-aria-dark="Switch to auto color mode">
         <span>Previous</span><div class="title">Changelog</div></div>
     </a>
   </div><div class="navigation-next">
-    <a href="changes_0.14.0.html">
+    <a href="changes_0.15.0.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">0.14.0 - 2024-07-02</div>
+        <div class="title">0.15.0 - 2024-09-27</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>
