@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="grass" data-content_root="">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Workflows (CI/CD) - Toolbox</title><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Customization" href="customization.html" /><link rel="prev" title="Getting Started" href="getting_started.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Github Workflows - Toolbox</title><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Customization" href="customization.html" /><link rel="prev" title="Getting Started" href="getting_started.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
     
-    <meta property="og:type" content="website"/><meta property="og:title" content="Workflows (CI/CD)"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Github Workflows"/>
 <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
@@ -56,7 +56,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1 current"><a class="reference internal" href="user_guide.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-person" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M10.5 5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm.061 3.073a4 4 0 10-5.123 0 6.004 6.004 0 00-3.431 5.142.75.75 0 001.498.07 4.5 4.5 0 018.99 0 .75.75 0 101.498-.07 6.005 6.005 0 00-3.432-5.142z"></path></svg> User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Workflows (CI/CD)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Github Workflows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="customization.html">Customization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules/modules.html">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="modules/nox.html">nox</a></li>
@@ -130,17 +130,9 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#generate-ci-ci-cd-workflows">Generate CI &amp; CI/CD workflows</a><ul>
-<li><a class="reference internal" href="#determine-the-toolbox-version">0. Determine the toolbox version</a></li>
 <li><a class="reference internal" href="#configure-your-project">1. Configure your project</a></li>
-<li><a class="reference internal" href="#add-the-standard-workflows-to-your-project">2. Add the standard workflows to your project</a><ul>
-<li><a class="reference internal" href="#ci-workflow">CI Workflow</a></li>
-<li><a class="reference internal" href="#ci-cd-workflow">CI/CD Workflow</a></li>
-<li><a class="reference internal" href="#pr-merge-workflow">PR-Merge Workflow</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#add-all-workflows-to-your-project">2. Add all workflows to your project</a></li>
+<li><a class="reference internal" href="#update-branch-protection">3. Update Branch Protection</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -161,7 +153,7 @@ data-aria-dark="Switch to auto color mode">
         <span>/</span>
         <meta itemprop="position" content="2" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Workflows (CI/CD)</strong>
+        <strong itemprop="name">Github Workflows</strong>
         <meta itemprop="position" content="3" />
       </li></ol>
     <div class="xl:hidden ml-1">
@@ -174,185 +166,53 @@ data-aria-dark="Switch to auto color mode">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="workflows-ci-cd">
-<h1>Workflows (CI/CD)<a class="headerlink" href="#workflows-ci-cd" title="Permalink to this heading">¶</a></h1>
-<section id="generate-ci-ci-cd-workflows">
-<h2>Generate CI &amp; CI/CD workflows<a class="headerlink" href="#generate-ci-ci-cd-workflows" title="Permalink to this heading">¶</a></h2>
-<p>The exasol-toolbox simplifies and supports 3 easily maintainable workflows.
-in order to make them work follow the description bellow.</p>
+          <section id="github-workflows">
+<h1>Github Workflows<a class="headerlink" href="#github-workflows" title="Permalink to this heading">¶</a></h1>
+<p>The exasol-toolbox ships with various GitHub workflows. By default, we suggest installing all of them,
+while the core workflows are:</p>
 <p><strong>Workflows</strong>:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>CI</dt><dd><p>Verifies PR’s and regularly checks the project.</p>
+<dt>CI</dt><dd><p>Verifies PRs and regularly checks the project.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>CI/CD</dt><dd><p>Verifies and publishes releases of the project.</p>
+<dt>CD</dt><dd><p>Publishes releases of the project.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>PR-Merge</dt><dd><p>Validates merges  and updates the documentation.</p>
+<dt>PR-Merge</dt><dd><p>Validates merges and updates the documentation.</p>
 </dd>
 </dl>
 </li>
 </ul>
-<section id="determine-the-toolbox-version">
-<h3>0. Determine the toolbox version<a class="headerlink" href="#determine-the-toolbox-version" title="Permalink to this heading">¶</a></h3>
-<p>One of the snippets bellow, should do the trick:</p>
-<ol class="arabic">
-<li><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">poetry<span class="w"> </span>show<span class="w"> </span>exasol-toolbox
-</span></pre></div>
-</div>
-</li>
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;from exasol.toolbox.version import VERSION;print(VERSION)&quot;</span>
-</span></pre></div>
-</div>
-</li>
-</ol>
-</section>
+<p>The toolbox command itself, <code class="code docutils literal notranslate"><span class="pre">tbx</span></code>, provides various CLI functions to help you maintain those workflows.
+For further help, run the command <code class="code docutils literal notranslate"><span class="pre">tbx</span> <span class="pre">workflow</span> <span class="pre">--help</span></code>.</p>
 <section id="configure-your-project">
-<h3>1. Configure your project<a class="headerlink" href="#configure-your-project" title="Permalink to this heading">¶</a></h3>
-<p>Make sure your github project has access to a deployment token for PyPi with the following name:  <strong>PYPI_TOKEN</strong>.
-It should be available to the repository either as Organization-, Repository- or Environment- secret.</p>
+<h2>1. Configure your project<a class="headerlink" href="#configure-your-project" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Make sure your GitHub project has access to a deployment token for PyPi with the following name: <strong>PYPI_TOKEN</strong>. It should be available to the repository either as an Organization-, Repository-, or Environment-secret.</p></li>
+<li><p>If your CI workflow involves slow or expensive steps you can guard these to be executed only after manual approval. The CI workflow will automaticall create a GitHub environment named <code class="code docutils literal notranslate"><span class="pre">manual-approval</span></code>. You only need to add reviewers in (<code class="code docutils literal notranslate"><span class="pre">Settings/Environments/manual-approval</span></code>) and move the steps to be guarded into the related section in job <code class="code docutils literal notranslate"><span class="pre">slow-checks</span></code> in file <code class="code docutils literal notranslate"><span class="pre">.github/workflows/merge-gate.yml</span></code>.</p></li>
+</ul>
 </section>
-<section id="add-the-standard-workflows-to-your-project">
-<h3>2. Add the standard workflows to your project<a class="headerlink" href="#add-the-standard-workflows-to-your-project" title="Permalink to this heading">¶</a></h3>
+<section id="add-all-workflows-to-your-project">
+<h2>2. Add all workflows to your project<a class="headerlink" href="#add-all-workflows-to-your-project" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">tbx<span class="w"> </span>workflow<span class="w"> </span>install<span class="w"> </span>all
 </span></pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you already have various workflows you may want to run the
-<code class="code docutils literal notranslate"><span class="pre">update</span></code> instead of the <code class="code docutils literal notranslate"><span class="pre">install</span></code> command.</p>
-</div>
-<section id="ci-workflow">
-<h4>CI Workflow<a class="headerlink" href="#ci-workflow" title="Permalink to this heading">¶</a></h4>
-<figure class="align-default">
-<img alt="ci-workflow" src="../_images/ci-workflow.png" />
-</figure>
-<p>To enable this workflow, add a file with the name <em>ci.yml</em> in your <em>.github/workflows</em> folder
-and add the following content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
-</span><span data-line="2">
-</span><span data-line="3"><span class="nt">on</span><span class="p">:</span>
-</span><span data-line="4"><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-</span><span data-line="5"><span class="w">    </span><span class="nt">branches-ignore</span><span class="p">:</span>
-</span><span data-line="6"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;github-pages/*&quot;</span>
-</span><span data-line="7"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;gh-pages/*&quot;</span>
-</span><span data-line="8"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;main&quot;</span>
-</span><span data-line="9"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;master&quot;</span>
-</span><span data-line="10"><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
-</span><span data-line="11"><span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">opened</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">reopened</span><span class="p p-Indicator">]</span>
-</span><span data-line="12"><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
-</span><span data-line="13"><span class="w">    </span><span class="c1"># “At 00:00 on every 7th day-of-month from 1 through 31.” (https://crontab.guru)</span>
-</span><span data-line="14"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1/7</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span>
-</span><span data-line="15">
-</span><span data-line="16"><span class="nt">jobs</span><span class="p">:</span>
-</span><span data-line="17">
-</span><span data-line="18"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
-</span><span data-line="19"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
-</span><span data-line="20"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="21"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
-</span><span data-line="22">
-</span><span data-line="23"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="24"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="25"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
-</span></pre></div>
+<ol class="arabic simple">
+<li><p>If you already have various workflows, you may want to run the <code class="code docutils literal notranslate"><span class="pre">update</span></code> command instead of the <code class="code docutils literal notranslate"><span class="pre">install</span></code> command.</p></li>
+<li><p>Some workflows depend on other workflows. Please ensure you have all the required workflows if you do not install all of them.</p></li>
+</ol>
 </div>
 </section>
-<section id="ci-cd-workflow">
-<h4>CI/CD Workflow<a class="headerlink" href="#ci-cd-workflow" title="Permalink to this heading">¶</a></h4>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Requires PYPI token to be available</p>
-</div>
-<figure class="align-default">
-<img alt="ci-cd-workflow" src="../_images/ci-cd-workflow.png" />
-</figure>
-<p>To enable this workflow, add a file with the name <em>ci-cd.yml</em> in your <em>.github/workflows</em> folder
-and add the following content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI/CD</span>
-</span><span data-line="2">
-</span><span data-line="3"><span class="nt">on</span><span class="p">:</span>
-</span><span data-line="4"><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-</span><span data-line="5"><span class="w">    </span><span class="nt">tags</span><span class="p">:</span>
-</span><span data-line="6"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**&#39;</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="nt">jobs</span><span class="p">:</span>
-</span><span data-line="9">
-</span><span data-line="10"><span class="w">  </span><span class="nt">check-tag-version-job</span><span class="p">:</span>
-</span><span data-line="11"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check Release Tag</span>
-</span><span data-line="12"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/check-release-tag.yml</span>
-</span><span data-line="13">
-</span><span data-line="14"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
-</span><span data-line="15"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
-</span><span data-line="16"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">check-tag-version-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="17"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="18"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
-</span><span data-line="19">
-</span><span data-line="20"><span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
-</span><span data-line="21"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continuous Delivery</span>
-</span><span data-line="22"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="23"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/build-and-publish.yml</span>
-</span><span data-line="24"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
-</span><span data-line="25"><span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
-</span><span data-line="26">
-</span><span data-line="27"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="28"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="29"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
-</span></pre></div>
-</div>
-</section>
-<section id="pr-merge-workflow">
-<h4>PR-Merge Workflow<a class="headerlink" href="#pr-merge-workflow" title="Permalink to this heading">¶</a></h4>
-<figure class="align-default">
-<img alt="pr-merge-workflow" src="../_images/pr-merge-workflow.png" />
-</figure>
-<p>To enable this workflow, add a file with the name <em>pr-merge.yml</em> in your <em>.github/workflows</em> folder
-and add the following content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PR-Merge</span>
-</span><span data-line="2">
-</span><span data-line="3"><span class="nt">on</span><span class="p">:</span>
-</span><span data-line="4"><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-</span><span data-line="5"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
-</span><span data-line="6"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;main&#39;</span>
-</span><span data-line="7"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;master&#39;</span>
-</span><span data-line="8">
-</span><span data-line="9"><span class="nt">jobs</span><span class="p">:</span>
-</span><span data-line="10">
-</span><span data-line="11"><span class="w">  </span><span class="c1"># This job can be removed if certain preconditions are met. See</span>
-</span><span data-line="12"><span class="w">  </span><span class="c1"># https://exasol.github.io/python-toolbox/user_guide/workflows.html#pr-merge-workflow</span>
-</span><span data-line="13">
-</span><span data-line="14"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
-</span><span data-line="15"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
-</span><span data-line="16"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/checks.yml</span>
-</span><span data-line="17"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inherit</span>
-</span><span data-line="18">
-</span><span data-line="19"><span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
-</span><span data-line="20"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
-</span><span data-line="21"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/gh-pages.yml</span>
-</span><span data-line="22">
-</span><span data-line="23"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
-</span><span data-line="24"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span data-line="25"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.github/workflows/report.yml</span>
-</span></pre></div>
-</div>
-<p>In order to make merging to the main branch faster you can skip running the
-tests again in this workflow.</p>
-<p>Before removing the <code class="docutils literal notranslate"><span class="pre">ci-job</span></code> from the workflow by please make sure the
-following prerequisites are met, as in some circumstances these tests might be
-the last or even only chance to detect problems.</p>
-<ul class="simple">
-<li><p>GitHub branch protection for main branch is properly configured.</p></li>
-<li><p>All dependencies are pointing to proper pypi packages in specific versions, i.e. no
-dependencies to the main branch of other git repositories.</p></li>
-<li><p>Development branches are short-lived and merged to main branch soon after
-finishing tests in the context of a pull request.</p></li>
-</ul>
-</section>
-</section>
+<section id="update-branch-protection">
+<h2>3. Update Branch Protection<a class="headerlink" href="#update-branch-protection" title="Permalink to this heading">¶</a></h2>
+<p>The best and most maintainable way to have solid branch protection (<code class="code docutils literal notranslate"><span class="pre">Settings/Branches/main</span></code>) is to require the workflow <code class="code docutils literal notranslate"><span class="pre">CI</span> <span class="pre">/</span> <span class="pre">Allow</span> <span class="pre">Merge</span></code> to pass successfully.</p>
 </section>
 </section>
 
