@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="grass" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hosting on GitHub Pages - Toolbox</title><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Hosting on GitLab Pages" href="gitlab_pages.html" /><link rel="prev" title="HTML Context" href="context.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=397bb51e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/shibuya.css?v=83eaa723" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../../../_static/print.css?v=20ff2c19" />
+    
+    <meta property="og:type" content="website"/><meta property="og:title" content="Hosting on GitHub Pages"/>
+<meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../../../index.html">
+      <img class="light-logo" src="../../../../_static/light-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../../../_static/dark-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <strong>Exasol Toolbox</strong>
+    </a>
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="nav-versions">
+    <button type="button" aria-label="Versions">
+      <span class="md:hidden">Versions</span>
+      <span class="hidden md:inline">0.10.0</span>
+      <i class="i-lucide chevron-down"></i>
+    </button>
+    <div class="nav-versions-choices"><ul><li><a href="../../../../../0.15.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.15.0</a></li><li><a href="../../../../../0.14.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.14.0</a></li><li><a href="../../../../../0.13.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.13.0</a></li><li><a href="../../../../../0.12.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.12.0</a></li><li><a href="../../../../../0.11.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.11.0</a></li><li><a href="github_pages.html">0.10.0</a></li><li><a href="../../../../../0.9.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.9.0</a></li><li><a href="../../../../../0.8.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.8.0</a></li><li><a href="../../../../../0.7.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.7.0</a></li><li><a href="../../../../../0.6.2/user_guide/modules/sphinx/multiversion/github_pages.html">0.6.2</a></li><li><a href="../../../../../0.6.1/user_guide/modules/sphinx/multiversion/github_pages.html">0.6.1</a></li><li><a href="../../../../../0.6.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.6.0</a></li><li><a href="../../../../../0.5.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.5.0</a></li><li><a href="../../../../../0.4.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.4.0</a></li><li><a href="../../../../../0.3.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.3.0</a></li><li><a href="../../../../../0.2.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.2.0</a></li><li><a href="../../../../../0.1.0/user_guide/modules/sphinx/multiversion/github_pages.html">0.1.0</a></li></ul></div>
+  </div><div class="sy-head-socials">
+  <a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../user_guide.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-person" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path></svg> User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_guide/developer_guide.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-tools" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.433 2.304A4.492 4.492 0 0 0 3.5 6c0 1.598.832 3.002 2.09 3.802.518.328.929.923.902 1.64v.008l-.164 3.337a.75.75 0 1 1-1.498-.073l.163-3.33c.002-.085-.05-.216-.207-.316A5.996 5.996 0 0 1 2 6a5.993 5.993 0 0 1 2.567-4.92 1.482 1.482 0 0 1 1.673-.04c.462.296.76.827.76 1.423v2.82c0 .082.041.16.11.206l.75.51a.25.25 0 0 0 .28 0l.75-.51A.249.249 0 0 0 9 5.282V2.463c0-.596.298-1.127.76-1.423a1.482 1.482 0 0 1 1.673.04A5.993 5.993 0 0 1 14 6a5.996 5.996 0 0 1-2.786 5.068c-.157.1-.209.23-.207.315l.163 3.33a.752.752 0 0 1-1.094.714.75.75 0 0 1-.404-.64l-.164-3.345c-.027-.717.384-1.312.902-1.64A4.495 4.495 0 0 0 12.5 6a4.492 4.492 0 0 0-1.933-3.696c-.024.017-.067.067-.067.16v2.818a1.75 1.75 0 0 1-.767 1.448l-.75.51a1.75 1.75 0 0 1-1.966 0l-.75-.51A1.75 1.75 0 0 1 5.5 5.282V2.463c0-.092-.043-.142-.067-.159Z"></path></svg> Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-terminal" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.749.749 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53Zm1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5Z"></path></svg> Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../github_actions/github_actions.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215Z"></path></svg> Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-cpu" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"></path></svg> API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changes/changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#setting-up-the-gh-pages-branch">Setting up the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> Branch</a></li>
+<li><a class="reference internal" href="#redirecting-from-the-document-root">Redirecting from the Document Root</a></li>
+<li><a class="reference internal" href="#automating-documentation-builds-with-travis-ci">Automating documentation builds with Travis CI</a></li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../../../index.html"><span itemprop="name">Exasol Toolbox</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../../user_guide.html"><span itemprop="name"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-person" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path></svg> User Guide</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../modules.html"><span itemprop="name">Modules</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="3" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../sphinx.html"><span itemprop="name">sphinx</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="4" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="multiversion.html"><span itemprop="name">sphinx-multiversion</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="5" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Hosting on GitHub Pages</strong>
+        <meta itemprop="position" content="6" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+        <article class="yue" role="main">
+          <section id="hosting-on-github-pages">
+<span id="github-pages"></span><h1>Hosting on GitHub Pages<a class="headerlink" href="#hosting-on-github-pages" title="Link to this heading">¶</a></h1>
+<p>You use <a class="reference external" href="https://pages.github.com/">GitHub Pages</a> to host documentation generated by <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code>.</p>
+<section id="setting-up-the-gh-pages-branch">
+<h2>Setting up the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> Branch<a class="headerlink" href="#setting-up-the-gh-pages-branch" title="Link to this heading">¶</a></h2>
+<p>First, you need to create a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and disable Jekyll.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">git<span class="w"> </span>checkout<span class="w"> </span>--orphan<span class="w"> </span>gh-pages
+</span><span data-line="2">touch<span class="w"> </span>.nojekyll
+</span><span data-line="3">git<span class="w"> </span>add<span class="w"> </span>.nojekyll
+</span><span data-line="4">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Disable Jekyll&quot;</span>
+</span></pre></div>
+</div>
+<p>Then, switch back to the branch you were on and build the documentation using <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">mkdir<span class="w"> </span>html
+</span><span data-line="2">sphinx-multiversion<span class="w"> </span>docs/<span class="w"> </span>html/
+</span></pre></div>
+</div>
+<p>If everything worked fine, you now need to switch back to your <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and commit the data there:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">git<span class="w"> </span>checkout<span class="w"> </span>gh-pages
+</span><span data-line="2"><span class="k">for</span><span class="w"> </span>dirname<span class="w"> </span><span class="k">in</span><span class="w"> </span>html/*<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>mv<span class="w"> </span><span class="s2">&quot;html/</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dirname</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span data-line="3">git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added HTML docs&quot;</span>
+</span><span data-line="4">git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>gh-pages
+</span></pre></div>
+</div>
+<p>Now your documentation should already be online.
+You can navigate to <code class="docutils literal notranslate"><span class="pre">https://username.github.io/reponame/master/</span></code> to see the documentation for the master branch.</p>
+</section>
+<section id="redirecting-from-the-document-root">
+<h2>Redirecting from the Document Root<a class="headerlink" href="#redirecting-from-the-document-root" title="Link to this heading">¶</a></h2>
+<p>You can easily redirect users that type <code class="docutils literal notranslate"><span class="pre">https://username.github.io/reponame/</span></code> into their addressbar to the documentation for any version you like.
+Just add a <code class="file docutils literal notranslate"><span class="pre">index.html</span></code> file to the root directory of your <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span data-line="2"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span data-line="3">  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span data-line="4">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Redirecting to master branch<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span data-line="5">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+</span><span data-line="6">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0; url=./master/index.html&quot;</span><span class="p">&gt;</span>
+</span><span data-line="7">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://username.github.io/reponame/master/index.html&quot;</span><span class="p">&gt;</span>
+</span><span data-line="8">  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span data-line="9"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></pre></div>
+</div>
+</section>
+<section id="automating-documentation-builds-with-travis-ci">
+<h2>Automating documentation builds with Travis CI<a class="headerlink" href="#automating-documentation-builds-with-travis-ci" title="Link to this heading">¶</a></h2>
+<p>You can also automate versioned builds using Travis CI.
+To do that, add this to your <code class="file docutils literal notranslate"><span class="pre">.travis.yml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">script</span><span class="p">:</span>
+</span><span data-line="2"><span class="w">  </span><span class="c1"># Build documentation</span>
+</span><span data-line="3"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir html</span>
+</span><span data-line="4"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx-multiversion docs/ html/</span>
+</span><span data-line="5">
+</span><span data-line="6"><span class="nt">before_deploy</span><span class="p">:</span>
+</span><span data-line="7"><span class="w">  </span><span class="c1"># Add .nojekyll file and redirect from docroot to the sphinx output dir</span>
+</span><span data-line="8"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">touch html/.nojekyll</span>
+</span><span data-line="9"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp assets/gh-pages-redirect.html html/index.html</span>
+</span><span data-line="10">
+</span><span data-line="11"><span class="nt">deploy</span><span class="p">:</span>
+</span><span data-line="12"><span class="w">  </span><span class="c1"># Only deploy the sphinx output dir as gh-pages branch</span>
+</span><span data-line="13"><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pages</span>
+</span><span data-line="14"><span class="w">  </span><span class="nt">skip_cleanup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span data-line="15"><span class="w">  </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_TOKEN</span>
+</span><span data-line="16"><span class="w">  </span><span class="nt">keep_history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span data-line="17"><span class="w">  </span><span class="nt">local_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">html</span>
+</span></pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For details, please have a look at the <a class="reference external" href="https://docs.travis-ci.com/user/deployment/pages/">GitHub Pages Deployment documentation for Travis CI</a>.</p>
+</div>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="context.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">HTML Context</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="gitlab_pages.html">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Hosting on GitLab Pages</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2022, Exasol</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+<a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
+  <iconify-icon icon="simple-icons:github"></iconify-icon>
+</a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../_static/tabs.js?v=3ee01567"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../../../../_static/shibuya.js?v=e2e99575"></script></body>
+</html>

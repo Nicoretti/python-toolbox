@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="grass" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Configuration - Toolbox</title><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Templates" href="templates.html" /><link rel="prev" title="Quickstart" href="quickstart.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=397bb51e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/shibuya.css?v=83eaa723" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../../../_static/print.css?v=20ff2c19" />
+    
+    <meta property="og:type" content="website"/><meta property="og:title" content="Configuration"/>
+<meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../../../index.html">
+      <img class="light-logo" src="../../../../_static/light-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../../../_static/dark-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <strong>Exasol Toolbox</strong>
+    </a>
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="nav-versions">
+    <button type="button" aria-label="Versions">
+      <span class="md:hidden">Versions</span>
+      <span class="hidden md:inline">0.8.0</span>
+      <i class="i-lucide chevron-down"></i>
+    </button>
+    <div class="nav-versions-choices"><ul><li><a href="../../../../../0.15.0/user_guide/modules/sphinx/multiversion/configuration.html">0.15.0</a></li><li><a href="../../../../../0.14.0/user_guide/modules/sphinx/multiversion/configuration.html">0.14.0</a></li><li><a href="../../../../../0.13.0/user_guide/modules/sphinx/multiversion/configuration.html">0.13.0</a></li><li><a href="../../../../../0.12.0/user_guide/modules/sphinx/multiversion/configuration.html">0.12.0</a></li><li><a href="../../../../../0.11.0/user_guide/modules/sphinx/multiversion/configuration.html">0.11.0</a></li><li><a href="../../../../../0.10.0/user_guide/modules/sphinx/multiversion/configuration.html">0.10.0</a></li><li><a href="../../../../../0.9.0/user_guide/modules/sphinx/multiversion/configuration.html">0.9.0</a></li><li><a href="configuration.html">0.8.0</a></li><li><a href="../../../../../0.7.0/user_guide/modules/sphinx/multiversion/configuration.html">0.7.0</a></li><li><a href="../../../../../0.6.2/user_guide/modules/sphinx/multiversion/configuration.html">0.6.2</a></li><li><a href="../../../../../0.6.1/user_guide/modules/sphinx/multiversion/configuration.html">0.6.1</a></li><li><a href="../../../../../0.6.0/user_guide/modules/sphinx/multiversion/configuration.html">0.6.0</a></li><li><a href="../../../../../0.5.0/user_guide/modules/sphinx/multiversion/configuration.html">0.5.0</a></li><li><a href="../../../../../0.4.0/user_guide/modules/sphinx/multiversion/configuration.html">0.4.0</a></li><li><a href="../../../../../0.3.0/user_guide/modules/sphinx/multiversion/configuration.html">0.3.0</a></li><li><a href="../../../../../0.2.0/user_guide/modules/sphinx/multiversion/configuration.html">0.2.0</a></li><li><a href="../../../../../0.1.0/user_guide/modules/sphinx/multiversion/configuration.html">0.1.0</a></li></ul></div>
+  </div><div class="sy-head-socials">
+  <a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../user_guide.html">👤 User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools.html">💻 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../github_actions/github_actions.html">🦺 Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">🧰 API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_guide/developer_guide.html">🛠 Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">📝 Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#tag-branch-remote-whitelists">Tag/Branch/Remote whitelists</a></li>
+<li><a class="reference internal" href="#release-pattern">Release Pattern</a></li>
+<li><a class="reference internal" href="#pre-and-post-build-command">Pre and post-build command</a></li>
+<li><a class="reference internal" href="#output-directory-format">Output Directory Format</a></li>
+<li><a class="reference internal" href="#specify-additional-build-targets">Specify Additional Build Targets</a></li>
+<li><a class="reference internal" href="#overriding-configuration-variables">Overriding Configuration Variables</a></li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../../../index.html"><span itemprop="name">Exasol Toolbox</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../../user_guide.html"><span itemprop="name">👤 User Guide</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../modules.html"><span itemprop="name">📦 Modules</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="3" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../sphinx.html"><span itemprop="name">sphinx</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="4" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="multiversion.html"><span itemprop="name">sphinx-multiversion</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="5" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Configuration</strong>
+        <meta itemprop="position" content="6" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+        <article class="yue" role="main">
+          <section id="configuration">
+<span id="id1"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code> reads your Sphinx <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> file for configuration.
+As usual, you can also override certain options by using <code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">var=value</span></code> on the command line.</p>
+<p>This is what the default configuration looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Whitelist pattern for tags (set to None to ignore all tags)</span>
+</span><span data-line="2"><span class="n">smv_tag_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^.*$&#39;</span>
+</span><span data-line="3">
+</span><span data-line="4"><span class="c1"># Whitelist pattern for branches (set to None to ignore all branches)</span>
+</span><span data-line="5"><span class="n">smv_branch_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^.*$&#39;</span>
+</span><span data-line="6">
+</span><span data-line="7"><span class="c1"># Whitelist pattern for remotes (set to None to use local branches only)</span>
+</span><span data-line="8"><span class="n">smv_remote_whitelist</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span data-line="9">
+</span><span data-line="10"><span class="c1"># Pattern for released versions</span>
+</span><span data-line="11"><span class="n">smv_released_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^tags/.*$&#39;</span>
+</span><span data-line="12">
+</span><span data-line="13"><span class="c1"># Format for versioned output directories inside the build directory</span>
+</span><span data-line="14"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{ref.name}</span><span class="s1">&#39;</span>
+</span><span data-line="15">
+</span><span data-line="16"><span class="c1"># Determines whether remote or local git branches/tags are preferred if their output dirs conflict</span>
+</span><span data-line="17"><span class="n">smv_prefer_remote_refs</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span data-line="18">
+</span><span data-line="19"><span class="c1"># Run a command before invoking sphinx-build</span>
+</span><span data-line="20"><span class="n">smv_prebuild_command</span> <span class="o">=</span> <span class="s1">&#39;doxygen&#39;</span>
+</span><span data-line="21">
+</span><span data-line="22"><span class="c1"># Regular expression of files and directories to export to outputdir after running smv_prebuild_command</span>
+</span><span data-line="23"><span class="n">smv_prebuild_export_pattern</span> <span class="o">=</span> <span class="s1">&#39;doxygen$&#39;</span>
+</span><span data-line="24">
+</span><span data-line="25"><span class="c1"># Export files and directories matching smv_prebuild_export_pattern to this subdirectory of outputdir</span>
+</span><span data-line="26"><span class="n">smv_prebuild_export_destination</span> <span class="o">=</span> <span class="s1">&#39;doxygen&#39;</span>
+</span><span data-line="27">
+</span><span data-line="28"><span class="c1"># Specify build targets and whether the resulting artefacts should be downloadable</span>
+</span><span data-line="29"><span class="n">smv_build_targets</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="30">    <span class="s2">&quot;HTML&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="31">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span>
+</span><span data-line="32">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span><span data-line="33">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="34">    <span class="p">},</span>
+</span><span data-line="35"><span class="p">}</span>
+</span><span data-line="36">
+</span><span data-line="37"><span class="c1"># Flag indicating whether the intermediate build directories should be removed after artefacts are produced</span>
+</span><span data-line="38"><span class="n">smv_clean_intermediate_files</span> <span class="o">=</span> <span class="kc">True</span>
+</span></pre></div>
+</div>
+<p>You can override all of these values inside your <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can check which tags/branches are matched by running <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code> with the <code class="docutils literal notranslate"><span class="pre">--dump-metadata</span></code> flag. Branches or tags that don’t contain both the sphinx source directory and the <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> file will be skipped automatically.</p>
+</div>
+<section id="tag-branch-remote-whitelists">
+<h2>Tag/Branch/Remote whitelists<a class="headerlink" href="#tag-branch-remote-whitelists" title="Link to this heading">¶</a></h2>
+<p>Tags, Branches and Remotes are included by <a class="reference external" href="https://docs.python.org/3/howto/regex.html">Regular Expressions</a>.
+Here are some examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">smv_tag_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^.*$&#39;</span>                   <span class="c1"># Include all tags</span>
+</span><span data-line="2"><span class="n">smv_tag_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^v\d+\.\d+$&#39;</span>            <span class="c1"># Include tags like &quot;v2.1&quot;</span>
+</span><span data-line="3">
+</span><span data-line="4"><span class="n">smv_branch_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^.*$&#39;</span>                <span class="c1"># Include all branches</span>
+</span><span data-line="5"><span class="n">smv_branch_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(?!master).*$&#39;</span>      <span class="c1"># Include all branches except &quot;master&quot;</span>
+</span><span data-line="6">
+</span><span data-line="7"><span class="n">smv_remote_whitelist</span> <span class="o">=</span> <span class="kc">None</span>                   <span class="c1"># Only use local branches</span>
+</span><span data-line="8"><span class="n">smv_remote_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^.*$&#39;</span>                <span class="c1"># Use branches from all remotes</span>
+</span><span data-line="9"><span class="n">smv_remote_whitelist</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(origin|upstream)$&#39;</span> <span class="c1"># Use branches from origin and upstream</span>
+</span></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To list values to match, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>.</p>
+</div>
+</section>
+<section id="release-pattern">
+<h2>Release Pattern<a class="headerlink" href="#release-pattern" title="Link to this heading">¶</a></h2>
+<p>A Regular Expression is used to determine if a version of the documentation has been released or if it’s a development version.
+To allow more flexibility, the regex is evaluated over the full refname.</p>
+<p>Here are some examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">smv_released_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^tags/.*$&#39;</span>           <span class="c1"># Tags only</span>
+</span><span data-line="2"><span class="n">smv_released_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^heads/\d+\.\d+$&#39;</span>    <span class="c1"># Branches like &quot;2.1&quot;</span>
+</span><span data-line="3"><span class="n">smv_released_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(tags/.*|heads/\d+\.\d+)$&#39;</span>           <span class="c1"># Branches like &quot;2.1&quot; and all tags</span>
+</span><span data-line="4"><span class="n">smv_released_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(heads|remotes/[^/]+)/(?!:master).*$&#39;</span> <span class="c1"># Everything except master branch</span>
+</span></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To list all refnames , you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">git<span class="w"> </span><span class="k">for</span>-each-ref<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;%(refname)&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/^refs\///g&#39;</span>
+</span></pre></div>
+</div>
+</div>
+</section>
+<section id="pre-and-post-build-command">
+<h2>Pre and post-build command<a class="headerlink" href="#pre-and-post-build-command" title="Link to this heading">¶</a></h2>
+<p>In some cases it may be necessary to run a command in the checked out directory before or after building with sphinx. For example if you are using <code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span></code> to generate the autodoc api source files.</p>
+<p>The options <code class="docutils literal notranslate"><span class="pre">smv_prebuild_command</span></code> and <code class="docutils literal notranslate"><span class="pre">smv_postbuild_command</span></code> are provided to facilitate this, along with the <code class="docutils literal notranslate"><span class="pre">smv_prebuild_export_pattern</span></code> and <code class="docutils literal notranslate"><span class="pre">smv_prebuild_export_directory</span></code> options to allow you to optionally select which files resulting from these commands should be moved to the output directory, should it be required. Equivalents for these commands are also available in the postbuild case.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Run sphinx-apidoc prior to invoking sphinx-build, and place the output in the docs/api directory</span>
+</span><span data-line="2"><span class="n">smv_prebuild_command</span> <span class="o">=</span> <span class="s2">&quot;sphinx-apidoc -o docs/api mymodule&quot;</span>
+</span></pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Run doxgen prior to running sphinx-build</span>
+</span><span data-line="2"><span class="n">smv_prebuild_command</span> <span class="o">=</span> <span class="s2">&quot;doxygen&quot;</span>
+</span><span data-line="3"><span class="c1"># Find the path to the directory titled &#39;doxygen&#39;</span>
+</span><span data-line="4"><span class="n">smv_prebuild_export_pattern</span> <span class="o">=</span> <span class="s1">&#39;doxygen$&#39;</span>
+</span><span data-line="5"><span class="c1"># Copy the doxygen build directory to the output directory</span>
+</span><span data-line="6"><span class="n">smv_prebuild_export_destination</span> <span class="o">=</span> <span class="s1">&#39;doxygen&#39;</span>
+</span></pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Make the doxygen generated latex files into pdfs</span>
+</span><span data-line="2"><span class="c1"># NOTE: This directory would need to exist on all whitelisted branches and tags.</span>
+</span><span data-line="3"><span class="c1"># More complex logic may be required in your individual use case.</span>
+</span><span data-line="4"><span class="n">smv_postbuild_command</span> <span class="o">=</span> <span class="s2">&quot;cd doxygen/latex &amp;&amp; make&quot;</span>
+</span><span data-line="5"><span class="c1"># Find all files matching the pattern *.pdf</span>
+</span><span data-line="6"><span class="n">smv_postbuild_export_pattern</span> <span class="o">=</span> <span class="s1">&#39;.*.pdf&#39;</span>
+</span><span data-line="7"><span class="c1"># Export the matching files to the artefacts directory</span>
+</span><span data-line="8"><span class="n">smv_postbuild_export_destination</span> <span class="o">=</span> <span class="s1">&#39;artefacts&#39;</span>
+</span></pre></div>
+</div>
+</section>
+<section id="output-directory-format">
+<h2>Output Directory Format<a class="headerlink" href="#output-directory-format" title="Link to this heading">¶</a></h2>
+<p>Each version will be built into a seperate subdirectory of the Sphinx output directory.
+The <code class="docutils literal notranslate"><span class="pre">smv_outputdir_format</span></code> setting determines the directory structure for the subdirectories. It is a new-style Python formatting string with two parameters - <code class="docutils literal notranslate"><span class="pre">ref</span></code> and <code class="docutils literal notranslate"><span class="pre">config</span></code>.</p>
+<p>Here are some examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{ref.name}</span><span class="s1">&#39;</span>        <span class="c1"># Use the branch/tag name</span>
+</span><span data-line="2"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{ref.commit}</span><span class="s1">&#39;</span>      <span class="c1"># Use the commit hash</span>
+</span><span data-line="3"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{ref.commit:.7s}</span><span class="s1">&#39;</span>  <span class="c1"># Use the commit hash truncated to 7 characters</span>
+</span><span data-line="4"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{ref.refname}</span><span class="s1">&#39;</span>     <span class="c1"># Use the full refname</span>
+</span><span data-line="5"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{ref.source}</span><span class="s1">/</span><span class="si">{ref.name}</span><span class="s1">&#39;</span>      <span class="c1"># Equivalent to the previous example</span>
+</span><span data-line="6"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;versions/</span><span class="si">{config.release}</span><span class="s1">&#39;</span>    <span class="c1"># Use &quot;versions&quot; as parent directory and the &quot;release&quot; variable from conf.py</span>
+</span><span data-line="7"><span class="n">smv_outputdir_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{config.version}</span><span class="s1">/</span><span class="si">{ref.name}</span><span class="s1">&#39;</span>  <span class="c1"># Use the version from conf.py as parent directory and the branch/tag name as subdirectory</span>
+</span></pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Have a look at <a class="reference external" href="https://pyformat.info/">PyFormat</a> for information how to use new-style Python formatting.</p>
+</div>
+</section>
+<section id="specify-additional-build-targets">
+<h2>Specify Additional Build Targets<a class="headerlink" href="#specify-additional-build-targets" title="Link to this heading">¶</a></h2>
+<p>In addition to generating static HTML documentation, it is also possible to specify additional build targets for each version of your documentation by providing a value for the <code class="docutils literal notranslate"><span class="pre">smv_build_targets</span></code> setting. This can be used to generate and package the documentation for download, or for post processing by an external program. The <code class="docutils literal notranslate"><span class="pre">smv_build_targets</span></code> setting has the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">smv_build_targets</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="s2">&quot;build_target_name&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="3">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">sphinx</span><span class="o">.</span><span class="n">builders</span><span class="o">&gt;</span><span class="p">,</span>
+</span><span data-line="4">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+</span><span data-line="5">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="nb">str</span>
+</span><span data-line="6">    <span class="p">},</span>
+</span><span data-line="7"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>These fields can be populated as follows:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">build_target_name</span></code>: This is the name of the build target. It must be unique within the <code class="docutils literal notranslate"><span class="pre">smv_build_targets</span></code> dictionary, and is used as the display name of the download artefacts if <code class="docutils literal notranslate"><span class="pre">downloadable</span> <span class="pre">==</span> <span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">builder</span></code>: This is the string identifying any valid <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/builders/index.html">sphinx builder</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">downloadable</span></code>: Indicate whether an artefact for this build should be generated. All artefacts are placed within the <code class="docutils literal notranslate"><span class="pre">build/version/artefacts</span></code> directory and made available in the html context.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">download_format</span></code>: A string indicating the format of the final downloadable artefact. Only valid if <code class="docutils literal notranslate"><span class="pre">downloadable</span> <span class="pre">==</span> <span class="pre">True</span></code>. Valid values for this include <code class="docutils literal notranslate"><span class="pre">tar</span></code>, <code class="docutils literal notranslate"><span class="pre">zip</span></code>, <code class="docutils literal notranslate"><span class="pre">pdf</span></code>, <code class="docutils literal notranslate"><span class="pre">epub</span></code>, or any other extension for build artefacts produced by the sphinx builder specified in <code class="docutils literal notranslate"><span class="pre">builder</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">tar</span></code> or <code class="docutils literal notranslate"><span class="pre">zip</span></code> are specified, the entire build directory is archived. An example of this would be the <code class="docutils literal notranslate"><span class="pre">html</span></code> directory for a <code class="docutils literal notranslate"><span class="pre">html</span></code> sphinx builder, or the <code class="docutils literal notranslate"><span class="pre">latex</span></code> directory for a <code class="docutils literal notranslate"><span class="pre">latex</span></code> sphinx builder.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the build artefact is an individual file, it is only matched according to the pattern &lt;project&gt;.&lt;download_format&gt; to avoid the ambiguity associated with multiple matches to a file extension. To illustrate this limitation, html files are always indexed with <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, which would not be identified as an individual build artefact. Thus, in order to make HTML available as a build artefact it must be archived using <code class="docutils literal notranslate"><span class="pre">zip</span></code>, <code class="docutils literal notranslate"><span class="pre">tar</span></code>, <code class="docutils literal notranslate"><span class="pre">gztar</span></code>, <code class="docutils literal notranslate"><span class="pre">bztar</span></code> or <code class="docutils literal notranslate"><span class="pre">xztar</span></code>.</p>
+</div>
+</li>
+</ul>
+<p>Some common examples may be as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">smv_build_targets</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="s2">&quot;HTML&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="3">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;html&quot;</span><span class="p">,</span>
+</span><span data-line="4">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span data-line="5">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;zip&quot;</span><span class="p">,</span>
+</span><span data-line="6">    <span class="p">},</span>
+</span><span data-line="7">    <span class="s2">&quot;SingleHTML&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="8">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;singlehtml&quot;</span><span class="p">,</span>
+</span><span data-line="9">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span data-line="10">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;tar&quot;</span><span class="p">,</span>
+</span><span data-line="11">    <span class="p">},</span>
+</span><span data-line="12">    <span class="s2">&quot;PDF&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="13">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;latexpdf&quot;</span><span class="p">,</span> <span class="c1"># This will build a .pdf file after generating latex documents</span>
+</span><span data-line="14">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span data-line="15">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+</span><span data-line="16">    <span class="p">},</span>
+</span><span data-line="17">    <span class="s2">&quot;LaTeX&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="18">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;latex&quot;</span><span class="p">,</span> <span class="c1"># This will only generate latex documents.</span>
+</span><span data-line="19">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span data-line="20">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;gztar&quot;</span><span class="p">,</span>
+</span><span data-line="21">    <span class="p">},</span>
+</span><span data-line="22">    <span class="s2">&quot;ePub&quot;</span> <span class="p">:</span> <span class="p">{</span>
+</span><span data-line="23">        <span class="s2">&quot;builder&quot;</span><span class="p">:</span> <span class="s2">&quot;epub&quot;</span><span class="p">,</span>
+</span><span data-line="24">        <span class="s2">&quot;downloadable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span data-line="25">        <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;epub&quot;</span><span class="p">,</span>
+</span><span data-line="26">    <span class="p">},</span>
+</span><span data-line="27"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>Additionally, the user is able to configure whether intermediate build files are cleaned from the output directory using the <code class="docutils literal notranslate"><span class="pre">smv_clean_intermediate_files</span></code> setting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">smv_clean_intermediate_files</span> <span class="o">=</span> <span class="kc">True</span>
+</span></pre></div>
+</div>
+<p>If this flag is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the resulting directory structure will resemble the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">build
+</span><span data-line="2">├──<span class="w"> </span>develop
+</span><span data-line="3">│<span class="w">   </span>├──<span class="w"> </span>artefacts
+</span><span data-line="4">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop.epub
+</span><span data-line="5">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop-HTML.zip
+</span><span data-line="6">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-develop.pdf
+</span><span data-line="7">│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="8">│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="9">├──<span class="w"> </span>master
+</span><span data-line="10">│<span class="w">   </span>├──<span class="w"> </span>artefacts
+</span><span data-line="11">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master.epub
+</span><span data-line="12">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master-HTML.zip
+</span><span data-line="13">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-master.pdf
+</span><span data-line="14">│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="15">│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="16">└──<span class="w"> </span>v0.1.0
+</span><span data-line="17"><span class="w">    </span>├──<span class="w"> </span>artefacts
+</span><span data-line="18"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0.epub
+</span><span data-line="19"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0-HTML.zip
+</span><span data-line="20"><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-v0.1.0.pdf
+</span><span data-line="21"><span class="w">    </span>├──<span class="w"> </span>index.html
+</span><span data-line="22"><span class="w">    </span>└──<span class="w"> </span>...
+</span></pre></div>
+</div>
+<p>However, if this flag is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, the resulting directory will also include intermediate build directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">build
+</span><span data-line="2">├──<span class="w"> </span>develop
+</span><span data-line="3">│<span class="w">   </span>├──<span class="w"> </span>artefacts
+</span><span data-line="4">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop.epub
+</span><span data-line="5">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-develop-HTML.zip
+</span><span data-line="6">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-develop.pdf
+</span><span data-line="7">│<span class="w">   </span>├──<span class="w"> </span>epub
+</span><span data-line="8">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example.epub
+</span><span data-line="9">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.xhtml
+</span><span data-line="10">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="11">│<span class="w">   </span>├──<span class="w"> </span>html
+</span><span data-line="12">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="13">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="14">│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="15">│<span class="w">   </span>├──<span class="w"> </span>latexpdf
+</span><span data-line="16">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>latex
+</span><span data-line="17">│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="18">├──<span class="w"> </span>master
+</span><span data-line="19">│<span class="w">   </span>├──<span class="w"> </span>artefacts
+</span><span data-line="20">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master.epub
+</span><span data-line="21">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-master-HTML.zip
+</span><span data-line="22">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-master.pdf
+</span><span data-line="23">│<span class="w">   </span>├──<span class="w"> </span>epub
+</span><span data-line="24">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>example.epub
+</span><span data-line="25">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.xhtml
+</span><span data-line="26">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="27">│<span class="w">   </span>├──<span class="w"> </span>html
+</span><span data-line="28">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="29">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="30">│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="31">│<span class="w">   </span>├──<span class="w"> </span>latexpdf
+</span><span data-line="32">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>latex
+</span><span data-line="33">│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="34">└──<span class="w"> </span>v0.1.0
+</span><span data-line="35"><span class="w">    </span>├──<span class="w"> </span>artefacts
+</span><span data-line="36"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0.epub
+</span><span data-line="37"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example_docs-v0.1.0-HTML.zip
+</span><span data-line="38"><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>example_docs-v0.1.0.pdf
+</span><span data-line="39"><span class="w">    </span>├──<span class="w"> </span>epub
+</span><span data-line="40"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>example.epub
+</span><span data-line="41"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>index.xhtml
+</span><span data-line="42"><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="43"><span class="w">    </span>├──<span class="w"> </span>html
+</span><span data-line="44"><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>index.html
+</span><span data-line="45"><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>...
+</span><span data-line="46"><span class="w">    </span>├──<span class="w"> </span>index.html
+</span><span data-line="47"><span class="w">    </span>├──<span class="w"> </span>latexpdf
+</span><span data-line="48"><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>latex
+</span><span data-line="49"><span class="w">    </span>└──<span class="w"> </span>...
+</span></pre></div>
+</div>
+<p>This will be useful if you want to use an external program to interact with the build output.</p>
+</section>
+<section id="overriding-configuration-variables">
+<h2>Overriding Configuration Variables<a class="headerlink" href="#overriding-configuration-variables" title="Link to this heading">¶</a></h2>
+<p>You can override configuration variables the same way as you’re used to with <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code>.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code> copies the branch data into a temporary directory and builds them there while leaving the current working directory unchanged, relative paths in your <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> will refer to the path of the version <em>you’re building from</em>, not the path of the version you are trying to build documentation for.</p>
+<p>Sometimes it might be necessary to override the configured path via a command line overide.
+<code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code> allows you to insert placeholders into your override strings that will automatically be replaced with the correct value for the version you’re building the documentation for.</p>
+<p>Here’s an example for the <a class="reference external" href="https://exhale.readthedocs.io/en/latest/">exhale extension</a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sphinx</span><span class="o">-</span><span class="n">multiversion</span> <span class="n">docs</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span> <span class="o">-</span><span class="n">D</span> <span class="s1">&#39;exhale_args.containmentFolder=$</span><span class="si">{sourcedir}</span><span class="s1">/api&#39;</span>
+</span></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to enclose the override string in single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) to prevent the shell from treating it as an environment variable and replacing it before it’s passed to <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To see a list of available placeholder names and their values for each version you can use the <code class="docutils literal notranslate"><span class="pre">--dump-metadata</span></code> flag.</p>
+</div>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="quickstart.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Quickstart</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="templates.html">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Templates</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2022, Exasol</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+<a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
+  <iconify-icon icon="simple-icons:github"></iconify-icon>
+</a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../_static/tabs.js?v=3ee01567"></script>
+      <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../../../../_static/shibuya.js?v=e2e99575"></script></body>
+</html>

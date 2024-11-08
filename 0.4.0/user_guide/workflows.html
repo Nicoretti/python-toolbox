@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="grass" data-content_root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏗️ Workflows (CI/CD) - Toolbox</title><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="🔧 Customization" href="customization.html" /><link rel="prev" title="🚦 Getting Started" href="getting_started.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
+    
+    <meta property="og:type" content="website"/><meta property="og:title" content="🏗️ Workflows (CI/CD)"/>
+<meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../index.html">
+      <img class="light-logo" src="../_static/light-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <img class="dark-logo" src="../_static/dark-exasol-logo.svg" alt="Exasol Toolbox" height="28" loading="lazy" />
+      <strong>Exasol Toolbox</strong>
+    </a>
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="nav-versions">
+    <button type="button" aria-label="Versions">
+      <span class="md:hidden">Versions</span>
+      <span class="hidden md:inline">0.4.0</span>
+      <i class="i-lucide chevron-down"></i>
+    </button>
+    <div class="nav-versions-choices"><ul><li><a href="../../0.15.0/user_guide/workflows.html">0.15.0</a></li><li><a href="../../0.14.0/user_guide/workflows.html">0.14.0</a></li><li><a href="../../0.13.0/user_guide/workflows.html">0.13.0</a></li><li><a href="../../0.12.0/user_guide/workflows.html">0.12.0</a></li><li><a href="../../0.11.0/user_guide/workflows.html">0.11.0</a></li><li><a href="../../0.10.0/user_guide/workflows.html">0.10.0</a></li><li><a href="../../0.9.0/user_guide/workflows.html">0.9.0</a></li><li><a href="../../0.8.0/user_guide/workflows.html">0.8.0</a></li><li><a href="../../0.7.0/user_guide/workflows.html">0.7.0</a></li><li><a href="../../0.6.2/user_guide/workflows.html">0.6.2</a></li><li><a href="../../0.6.1/user_guide/workflows.html">0.6.1</a></li><li><a href="../../0.6.0/user_guide/workflows.html">0.6.0</a></li><li><a href="../../0.5.0/user_guide/workflows.html">0.5.0</a></li><li><a href="workflows.html">0.4.0</a></li><li><a href="../../0.3.0/user_guide/workflows.html">0.3.0</a></li><li><a href="../../0.2.0/user_guide/workflows.html">0.2.0</a></li><li><a href="../../0.1.0/user_guide/workflows.html">0.1.0</a></li></ul></div>
+  </div><div class="sy-head-socials">
+  <a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">👤 User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">🧰 API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_guide/developer_guide.html">🛠 Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">📝 Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#generate-ci-ci-cd-workflows">Generate CI &amp; CI/CD workflows</a><ul>
+<li><a class="reference internal" href="#determine-the-toolbox-version">0. Determine the toolbox version</a></li>
+<li><a class="reference internal" href="#configure-your-project">1. Configure your project</a></li>
+<li><a class="reference internal" href="#add-the-standard-workflows-to-your-project">2. Add the standard workflows to your project</a><ul>
+<li><a class="reference internal" href="#ci-workflow">CI Workflow</a></li>
+<li><a class="reference internal" href="#ci-cd-workflow">CI/CD Workflow</a></li>
+<li><a class="reference internal" href="#pr-merge-workflow">PR-Merge Workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Exasol Toolbox</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="user_guide.html"><span itemprop="name">👤 User Guide</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">🏗️ Workflows (CI/CD)</strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+        <article class="yue" role="main">
+          <section id="workflows-ci-cd">
+<h1>🏗️ Workflows (CI/CD)<a class="headerlink" href="#workflows-ci-cd" title="Link to this heading">¶</a></h1>
+<section id="generate-ci-ci-cd-workflows">
+<h2>Generate CI &amp; CI/CD workflows<a class="headerlink" href="#generate-ci-ci-cd-workflows" title="Link to this heading">¶</a></h2>
+<p>The exasol-toolbox simplifies and supports 3 easily maintainable workflows.
+in order to make them work follow the description bellow.</p>
+<p><strong>Workflows</strong>:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>CI</dt><dd><p>Verifies PR’s and regularly checks the project.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CI/CD</dt><dd><p>Verifies and publishes releases of the project.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PR-Merge</dt><dd><p>Validates merges  and updates the documentation.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="determine-the-toolbox-version">
+<h3>0. Determine the toolbox version<a class="headerlink" href="#determine-the-toolbox-version" title="Link to this heading">¶</a></h3>
+<p>One of the snippets bellow, should do the trick:</p>
+<ol class="arabic">
+<li><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span data-line="1">poetry<span class="w"> </span>show<span class="w"> </span>exasol-toolbox
+</span></pre></div>
+</div>
+</li>
+<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;from exasol.toolbox.version import VERSION;print(VERSION)&quot;</span>
+</span></pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="configure-your-project">
+<h3>1. Configure your project<a class="headerlink" href="#configure-your-project" title="Link to this heading">¶</a></h3>
+<p>Make sure your github project has access to a deployment token for PyPi with the following name:  <strong>PYPI_TOKEN</strong>.
+It should be available to the repository either as Organization-, Repository- or Environment- secret.</p>
+</section>
+<section id="add-the-standard-workflows-to-your-project">
+<h3>2. Add the standard workflows to your project<a class="headerlink" href="#add-the-standard-workflows-to-your-project" title="Link to this heading">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you use the configurations bellow you should replace <em>&#64;main</em> <em>ref</em> with a <em>ref</em> which is pointing
+to the toolbox version you are using. E.g. if you are using toolbox version <em>0.1.0</em> replace
+all references to <em>&#64;main</em> with references to <em>&#64;0.1.0</em>.</p>
+</div>
+<section id="ci-workflow">
+<h4>CI Workflow<a class="headerlink" href="#ci-workflow" title="Link to this heading">¶</a></h4>
+<figure class="align-default">
+<img alt="ci-workflow" src="../_images/ci-workflow.png" />
+</figure>
+<p>To enable this workflow, add a file with the name <em>ci.yml</em> in your <em>.github/workflows</em> folder
+and add the following content:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="nt">on</span><span class="p">:</span>
+</span><span data-line="4"><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span data-line="5"><span class="w">    </span><span class="nt">branches-ignore</span><span class="p">:</span>
+</span><span data-line="6"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;github-pages/*&quot;</span>
+</span><span data-line="7"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;gh-pages/*&quot;</span>
+</span><span data-line="8"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;main&quot;</span>
+</span><span data-line="9"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;master&quot;</span>
+</span><span data-line="10"><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+</span><span data-line="11"><span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">opened</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">reopened</span><span class="p p-Indicator">]</span>
+</span><span data-line="12"><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+</span><span data-line="13"><span class="w">    </span><span class="c1"># “At 00:00 on every 7th day-of-month from 1 through 31.” (https://crontab.guru)</span>
+</span><span data-line="14"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">1/7</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span>
+</span><span data-line="15">
+</span><span data-line="16"><span class="nt">jobs</span><span class="p">:</span>
+</span><span data-line="17">
+</span><span data-line="18"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+</span><span data-line="19"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+</span><span data-line="20"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.4.0</span>
+</span><span data-line="21">
+</span><span data-line="22"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="23"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="24"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.4.0</span>
+</span></pre></div>
+</div>
+</section>
+<section id="ci-cd-workflow">
+<h4>CI/CD Workflow<a class="headerlink" href="#ci-cd-workflow" title="Link to this heading">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Requires PYPI token to be available</p>
+</div>
+<figure class="align-default">
+<img alt="ci-cd-workflow" src="../_images/ci-cd-workflow.png" />
+</figure>
+<p>To enable this workflow, add a file with the name <em>ci-cd.yml</em> in your <em>.github/workflows</em> folder
+and add the following content:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI/CD</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="nt">on</span><span class="p">:</span>
+</span><span data-line="4"><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span data-line="5"><span class="w">    </span><span class="nt">tags</span><span class="p">:</span>
+</span><span data-line="6"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;**&#39;</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="nt">jobs</span><span class="p">:</span>
+</span><span data-line="9">
+</span><span data-line="10"><span class="w">  </span><span class="nt">check-tag-version-job</span><span class="p">:</span>
+</span><span data-line="11"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check Release Tag</span>
+</span><span data-line="12"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/check-release-tag.yml@0.4.0</span>
+</span><span data-line="13">
+</span><span data-line="14"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+</span><span data-line="15"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+</span><span data-line="16"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">check-tag-version-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="17"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.4.0</span>
+</span><span data-line="18">
+</span><span data-line="19"><span class="w">  </span><span class="nt">cd-job</span><span class="p">:</span>
+</span><span data-line="20"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Continues Delivery</span>
+</span><span data-line="21"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="22"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/build-and-publish.yml@0.4.0</span>
+</span><span data-line="23"><span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
+</span><span data-line="24"><span class="w">      </span><span class="nt">PYPI_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
+</span><span data-line="25">
+</span><span data-line="26"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="27"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="28"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.4.0</span>
+</span></pre></div>
+</div>
+</section>
+<section id="pr-merge-workflow">
+<h4>PR-Merge Workflow<a class="headerlink" href="#pr-merge-workflow" title="Link to this heading">¶</a></h4>
+<figure class="align-default">
+<img alt="pr-merge-workflow" src="../_images/pr-merge-workflow.png" />
+</figure>
+<p>To enable this workflow, add a file with the name <em>pr-merge.yml</em> in your <em>.github/workflows</em> folder
+and add the following content:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PR-Merge</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="nt">on</span><span class="p">:</span>
+</span><span data-line="4"><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+</span><span data-line="5"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+</span><span data-line="6"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;main&#39;</span>
+</span><span data-line="7"><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;master&#39;</span>
+</span><span data-line="8">
+</span><span data-line="9"><span class="nt">jobs</span><span class="p">:</span>
+</span><span data-line="10">
+</span><span data-line="11"><span class="w">  </span><span class="nt">ci-job</span><span class="p">:</span>
+</span><span data-line="12"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checks</span>
+</span><span data-line="13"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/checks.yml@0.4.0</span>
+</span><span data-line="14">
+</span><span data-line="15"><span class="w">  </span><span class="nt">publish-docs</span><span class="p">:</span>
+</span><span data-line="16"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish Documentation</span>
+</span><span data-line="17"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/gh-pages.yml@0.4.0</span>
+</span><span data-line="18">
+</span><span data-line="19"><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+</span><span data-line="20"><span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">ci-job</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span data-line="21"><span class="w">    </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exasol/python-toolbox/.github/workflows/report.yml@0.4.0</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="getting_started.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">🚦 Getting Started</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="customization.html">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">🔧 Customization</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2022, Exasol</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+<a href="https://github.com/exasol/python-toolbox" aria-label="GitHub">
+  <iconify-icon icon="simple-icons:github"></iconify-icon>
+</a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/tabs.js?v=3ee01567"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+</html>
