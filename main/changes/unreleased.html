@@ -141,6 +141,8 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#changed">&#128295; Changed</a></li>
+<li><a class="reference internal" href="#fixed">&#128030; Fixed</a></li>
 <li><a class="reference internal" href="#documentation">&#128218; Documentation</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
@@ -177,11 +179,30 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue" role="main">
           <section id="unreleased">
 <h1>Unreleased<a class="headerlink" href="#unreleased" title="Link to this heading">¶</a></h1>
+<section id="changed">
+<h2>🔧 Changed<a class="headerlink" href="#changed" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Excluded pyupgrade from project check due to its destructive nature</p></li>
+<li><p>Updated cookiecutter template</p>
+<ul>
+<li><p>removed obsolete template file <code class="docutils literal notranslate"><span class="pre">version.html</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="fixed">
+<h2>🐞 Fixed<a class="headerlink" href="#fixed" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed syntax error in the <code class="docutils literal notranslate"><span class="pre">check.yml</span></code> template which resulted in an invalid workflow file</p></li>
+</ul>
+</section>
 <section id="documentation">
 <h2>📚 Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
 <ul class="simple">
+<li><p>Fixed various documentation typos</p></li>
 <li><p>Added a toolbox migration guide</p></li>
 <li><p>Fixed version information in GitHub Actions reference</p></li>
+<li><p>Updated the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> related documentation</p></li>
 </ul>
 </section>
 </section>
