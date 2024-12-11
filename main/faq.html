@@ -144,6 +144,9 @@ data-aria-dark="Switch to auto color mode">
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
 <li><a class="reference internal" href="#no-module-named-noxconfig">No Module Named &#8216;noxconfig&#8217;</a></li>
 <li><a class="reference internal" href="#duplicated-label-error-when-building-documentation">Duplicated label error when building documentation</a></li>
+<li><a class="reference internal" href="#warning-while-building-multiversion-documentation">Warning while building multiversion documentation</a></li>
+<li><a class="reference internal" href="#missing-version-selection-box-in-multiversion-documentation">Missing Version Selection Box in Multiversion Documentation</a></li>
+<li><a class="reference internal" href="#limited-previous-versions-in-multiversion-documentation">Limited Previous Versions in Multiversion Documentation</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -190,6 +193,31 @@ data-aria-dark="Switch to auto color mode">
 <section id="duplicated-label-error-when-building-documentation">
 <span id="faq-duplicated-label-error"></span><h2>Duplicated label error when building documentation<a class="headerlink" href="#duplicated-label-error-when-building-documentation" title="Link to this heading">¶</a></h2>
 <p>Similar error to <code class="code docutils literal notranslate"><span class="pre">Warning,</span> <span class="pre">treated</span> <span class="pre">as</span> <span class="pre">error:</span> <span class="pre">integration-test-docker-environment/doc/changes/changes_0.10.0.md:5:duplicate</span> <span class="pre">label</span> <span class="pre">summary,</span> <span class="pre">other</span> <span class="pre">instance</span> <span class="pre">in</span> <span class="pre">integration-test-docker-environment/doc/changes/changes_0.1.0.md'</span></code>, might be caused by sphinx extension <cite>sphinx.ext.autosectionlabel</cite>. Try to remove this extension in <cite>doc/conf.py</cite>.</p>
+</section>
+<section id="warning-while-building-multiversion-documentation">
+<span id="faq-multiversion-build-warnings"></span><h2>Warning while building multiversion documentation<a class="headerlink" href="#warning-while-building-multiversion-documentation" title="Link to this heading">¶</a></h2>
+<p>When running <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">docs:multiversion</span></code>, I receive the following warnings during the build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">WARNING</span><span class="p">:</span> <span class="n">unknown</span> <span class="n">config</span> <span class="n">value</span> <span class="s1">&#39;smv_metadata_path&#39;</span> <span class="ow">in</span> <span class="n">override</span><span class="p">,</span> <span class="n">ignoring</span>
+</span><span data-line="2"><span class="n">WARNING</span><span class="p">:</span> <span class="n">unknown</span> <span class="n">config</span> <span class="n">value</span> <span class="s1">&#39;smv_current_version&#39;</span> <span class="ow">in</span> <span class="n">override</span><span class="p">,</span> <span class="n">ignoring</span>
+</span></pre></div>
+</div>
+<p>If you receive the warnings above, it is very likely that the multiversion extension is not configured in your Sphinx configuration (<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>). Try adding it to your configuration and rerun the build.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+</span><span data-line="2">    <span class="o">...</span><span class="p">,</span>
+</span><span data-line="3">    <span class="o">...</span><span class="p">,</span>
+</span><span data-line="4">    <span class="s2">&quot;exasol.toolbox.sphinx.multiversion&quot;</span><span class="p">,</span>
+</span><span data-line="5"><span class="p">]</span>
+</span></pre></div>
+</div>
+</section>
+<section id="missing-version-selection-box-in-multiversion-documentation">
+<span id="faq-multiversion-selection-missing"></span><h2>Missing Version Selection Box in Multiversion Documentation<a class="headerlink" href="#missing-version-selection-box-in-multiversion-documentation" title="Link to this heading">¶</a></h2>
+<p>I have run <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">docs:multiversion</span></code>, but I still do not see any version selection box in the upper right corner before the GitHub symbol.</p>
+<p>This is likely due to <a class="reference internal" href="#faq-multiversion-build-warnings"><span class="std std-ref">Warning while building multiversion documentation</span></a></p>
+</section>
+<section id="limited-previous-versions-in-multiversion-documentation">
+<span id="faq-multiversion-limited-versions"></span><h2>Limited Previous Versions in Multiversion Documentation<a class="headerlink" href="#limited-previous-versions-in-multiversion-documentation" title="Link to this heading">¶</a></h2>
+<p>If not all previous versions of the project are available via the version selection box of the multiversion documentation, it is likely due to the fact that the unavailable documentation for those versions was not in a compatible format (there hasn’t been a compatible setup of a Sphinx-based documentation).</p>
 </section>
 </section>
 
