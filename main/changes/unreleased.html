@@ -142,6 +142,8 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#breaking-changes">&#128680; Breaking Changes</a></li>
+<li><a class="reference internal" href="#added">&#10024; Added</a></li>
 <li><a class="reference internal" href="#documentation">&#128218; Documentation</a></li>
 <li><a class="reference internal" href="#fixed">&#128030; Fixed</a></li>
 </ul>
@@ -179,6 +181,51 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue" role="main">
           <section id="unreleased">
 <h1>Unreleased<a class="headerlink" href="#unreleased" title="Link to this heading">¶</a></h1>
+<section id="breaking-changes">
+<h2>🚨 Breaking Changes<a class="headerlink" href="#breaking-changes" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p><strong>Matrices in CI/CD workflows will be generated automatically now</strong></p>
+<p>Make sure you have installed all the latest workflow files, especially the newly added ones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix-all.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix-python.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix-exasol.yml</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="added">
+<h2>✨ Added<a class="headerlink" href="#added" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>Added support for dynamically generated workflow matrices.</p>
+<p>This feature allows you to easily change the test matrices in one place: <code class="docutils literal notranslate"><span class="pre">noxconfig.py</span></code>.</p>
+<p>Note: As usual, there are different ways a user can adjust or change the behavior. In the case of the build matrices, there are three obvious ways:</p>
+<ul class="simple">
+<li><p>Set the appropriate fields in the <code class="docutils literal notranslate"><span class="pre">noxconfig.py</span></code> project configuration (<code class="docutils literal notranslate"><span class="pre">PROJECT_CONFIG</span></code>):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">python_versions</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">...</span> <span class="pre">]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exasol_versions</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">...</span> <span class="pre">]</span></code></p></li>
+</ul>
+</li>
+<li><p>Overwrite the nox tasks:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix:all</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix:python</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix:exasol</span></code></p></li>
+</ul>
+</li>
+<li><p>Overwrite/replace the matrix generation workflows:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix-all.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix-python.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matrix-exasol.yml</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Among all of the above, the safest way is to set the matrix-related fields in your project config object in <code class="docutils literal notranslate"><span class="pre">noxconfig.py</span></code>.</p>
+</li>
+</ul>
+</section>
 <section id="documentation">
 <h2>📚 Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
 <ul class="simple">
