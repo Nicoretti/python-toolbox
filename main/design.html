@@ -159,6 +159,18 @@ data-aria-dark="Switch to auto color mode">
 </li>
 </ul>
 </li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a><ul>
+<li><a class="reference internal" href="#passing-files-as-individual-arguments-on-the-cli">Passing files as individual arguments on the CLI</a></li>
+<li><a class="reference internal" href="#inconsistent-naming">Inconsistent Naming</a></li>
+<li><a class="reference internal" href="#project-configuration">Project Configuration</a></li>
+<li><a class="reference internal" href="#nox-task-runner">Nox Task Runner</a></li>
+<li><a class="reference internal" href="#poetry-for-project-management">Poetry for Project Management</a></li>
+<li><a class="reference internal" href="#code-formatting">Code Formatting</a></li>
+<li><a class="reference internal" href="#pylint">Pylint</a></li>
+<li><a class="reference internal" href="#security-linter">Security Linter</a></li>
+<li><a class="reference internal" href="#workflows-dependency-structure">Workflows Dependency Structure</a></li>
+</ul>
+</li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -495,6 +507,200 @@ but isn’t  annotated as a nox session/task (<a class="reference external" href
 </div>
 </section>
 </section>
+</section>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h2>
+<p>This section documents flaws, sins, and known issues with the current design and/or its current implementation that were either known upfront or surfaced through the course of implementing it. Additionally, it attempts to explain why certain choices were made at the time, so one can better understand whether it may be reasonable to make changes now or in the future.</p>
+<section id="passing-files-as-individual-arguments-on-the-cli">
+<h3>Passing files as individual arguments on the CLI<a class="headerlink" href="#passing-files-as-individual-arguments-on-the-cli" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong></p>
+<p>As of today selection of python files for linting, formatting etc. is done by passing all relevant python files as individual argument(s)
+to the tools used/invoked by the python toolbox.</p>
+<p><strong>Downsides:</strong></p>
+<ul class="simple">
+<li><p>Most shells have limitations on the number of arguments and their length.</p></li>
+<li><p>Noisy output, making it hard to decipher the actual command.</p></li>
+<li><p>Not ideal for all use cases.</p></li>
+</ul>
+<p><strong>Rationale/History:</strong></p>
+<ul class="simple">
+<li><p>The current method of passing files as individual arguments by default offers ease in collection and filtering. It also allows users to simply provide or replace the selection mechanism fairly easily.</p></li>
+<li><p>Every tool used by the toolbox (e.g., <cite>black</cite>, <cite>isort</cite>) used to support passing files by argument. However, not all of them provided the same mechanism for selection or deselection patterns (e.g. “glob”).</p></li>
+</ul>
+<p><strong>Ideas/Solutions:</strong></p>
+<ul class="simple">
+<li><p>Develop a wrapper that allows for different selection mechanisms</p></li>
+</ul>
+</section>
+<section id="inconsistent-naming">
+<h3>Inconsistent Naming<a class="headerlink" href="#inconsistent-naming" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong></p>
+<p>The naming is not consistent across the project name (python-toolbox) and the PyPI package name (exasol-toolbox).</p>
+<p><strong>Downsides:</strong></p>
+<ul class="simple">
+<li><p>Misalignment between the PyPI package name and the project name causes confusion when discussing or referring to the project/package.</p></li>
+</ul>
+<p><strong>Rationale/History:</strong></p>
+<ul class="simple">
+<li><p>Initially, this was a proof of concept (POC) to verify a few ideas, and the naming was not well thought out at the time.</p></li>
+<li><p>Later, when publishing the first package for distribution, the project name was unavailable on PyPI, resulting in a different name being used on PyPI.</p></li>
+</ul>
+<p><strong>Ideas/Solutions:</strong></p>
+<ul class="simple">
+<li><p>Consistently rename project to <code class="docutils literal notranslate"><span class="pre">exasol-python-toolbox</span></code>: <a class="reference external" href="https://github.com/exasol/python-toolbox/issues/325">Issue-325</a></p></li>
+</ul>
+</section>
+<section id="project-configuration">
+<h3>Project Configuration<a class="headerlink" href="#project-configuration" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong>
+Currently, the documentation regarding the configuration of projects using the toolbox has various gaps and does not follow a clear configuration hierarchy or structure.</p>
+<p><strong>Downsides:</strong></p>
+<ul class="simple">
+<li><p>Multiple scattered configuration points make management and understanding difficult.</p></li>
+<li><p>Configurations overlap or conflict with unclear priorities.</p></li>
+<li><p>Tool leakage (e.g., the <code class="docutils literal notranslate"><span class="pre">[isort]</span></code> section in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>).
+(If everything were done via toolbox config file(s), backing tools could be swapped more easily).</p></li>
+</ul>
+<p><strong>Rationale/History:</strong></p>
+<ul class="simple">
+<li><p>Initial decisions aimed to simplify individual adjustments in the projects until we had a better understanding of what needed to be configured.</p></li>
+<li><p>Scattering configuration across various files and tools was a hasty decision to expedite development and accommodate various tools.</p></li>
+</ul>
+<p><strong>Ideas/Solutions:</strong></p>
+<p>Currently used methods to configure toolbox-based projects:</p>
+<ol class="arabic simple">
+<li><p>Project configuration: <code class="docutils literal notranslate"><span class="pre">noxconfig.py</span></code></p></li>
+<li><p>Tool-specific configuration files or sections in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Implementing plugin extension points</p></li>
+<li><p>Overwriting nox tasks with custom implementations</p></li>
+<li><p>Replacing with customized workflows of the same name (only applicable for action/workflows)</p></li>
+</ol>
+<p>Refinement:</p>
+<ul class="simple">
+<li><p>Centralize all toolbox based configurations in a toolbox config file (<code class="docutils literal notranslate"><span class="pre">noxconfig.py</span></code>).</p></li>
+<li><p>Rename the toolbox config file from <code class="docutils literal notranslate"><span class="pre">noxconfig.py</span></code> to a more appropriate name that reflects its purpose.</p></li>
+<li><p>Document configuration hierarchy and usage.</p></li>
+</ul>
+</section>
+<section id="nox-task-runner">
+<h3>Nox Task Runner<a class="headerlink" href="#nox-task-runner" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong>
+While Nox isn’t a perfect fit, it still meets most of our requirements for a task runner.</p>
+<p><strong>Downsides:</strong></p>
+<ul class="simple">
+<li><p>Imports over top-level modules are problematic as all contained tasks are imported.</p></li>
+<li><p>Passing and receiving additional arguments to a task is clunky.</p></li>
+<li><p>The default behavior of creating a venv for tasks is undesirable.</p></li>
+<li><p>Nox does not support grouping.</p></li>
+</ul>
+<p><strong>Rationale/History:</strong></p>
+<p>Why Nox was choosen:</p>
+<ul class="simple">
+<li><p>No additional language(s) required: There was no need to introduce extra programming languages or binaries, simplifying the development process.</p></li>
+<li><p>Python-based: Being Python-based, Nox can be extended and understood by Python developers.</p></li>
+<li><p>Python code: As Nox tasks are defined via Python code, existing scripts can be reused and code can be shared easily.</p></li>
+<li><p>Simplicity: Nox is relatively “small” in functionality, making it somewhat simple to use and understand.</p></li>
+</ul>
+<p><strong>Ideas/Solutions:</strong></p>
+<p>Grouping:</p>
+<p>Since Nox doesn’t natively support task grouping, we need a strategy to group commands.
+Therefore, a naming convention to indicate grouping should be adopted.</p>
+<blockquote>
+<div><p>Suggestion: Groups will be separated using a <code class="code docutils literal notranslate"><span class="pre">:</span></code> (colon) because <code class="code docutils literal notranslate"><span class="pre">-</span></code> (dash) might already be used within task names.</p>
+</div></blockquote>
+<p>Imports:</p>
+<p>Consider modularizing tasks to handle top-level imports better.</p>
+<p>Others Issues:</p>
+<p>Generally, one may consider addressing the other issues by choosing another task runner or creating a small set of CLI tools and extension points manually provided by the toolbox.</p>
+</section>
+<section id="poetry-for-project-management">
+<h3>Poetry for Project Management<a class="headerlink" href="#poetry-for-project-management" title="Link to this heading">¶</a></h3>
+<p>While poetry was and is a good choice for Exasol project, dependency, build tool etc. “most recently”
+<a class="reference external" href="https://docs.astral.sh/uv/">uv</a> has surfaced and made big advanced. Looking at uv it addresses additional itches with
+our projects and therefore in the long run it may be a good idea to migrate our project setups to it.
+Use poetry for project, build and dependency management.</p>
+</section>
+<section id="code-formatting">
+<h3>Code Formatting<a class="headerlink" href="#code-formatting" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong></p>
+<p>Currently we use Black and Isort for code formatting, though running them on a larger code base as pre-commit hooks or such can take quite a bit of time.</p>
+<p><strong>Downsides:</strong></p>
+<ul class="simple">
+<li><p>Two tools and an aligned configuration of them are required to cleanly and correctly format the codebase.</p></li>
+<li><p>Code needs to be processed at least twice as we apply two individual tools.</p></li>
+<li><p>The performance of Black and Isort is okay but not great compared to other tools.</p></li>
+</ul>
+<p><strong>Rationale/History:</strong></p>
+<ul class="simple">
+<li><p>Black and Isort have been used because they are battle-tested and widely used</p></li>
+<li><p>When we opted for Black and Isort, <code class="docutils literal notranslate"><span class="pre">ruff</span></code> wasn’t “a thing” yet and at best in its early stages.</p></li>
+<li><p>Black and Isort already have been known by most python devs when we where selecting the tools</p></li>
+</ul>
+<p><strong>Ideas/Solutions:</strong></p>
+<p>As <a class="reference external" href="https://docs.astral.sh/ruff/">Ruff</a> is fairly stable and also tested and used by many Python projects
+we should consider transitioning to it.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Well-tested</p></li>
+<li><p>Widely used</p></li>
+<li><p>Excellent performance</p></li>
+<li><p>Single tool for imports and formatting the codebase</p></li>
+<li><p>Simplifies adopting ruff for linting</p></li>
+</ul>
+</section>
+<section id="pylint">
+<h3>Pylint<a class="headerlink" href="#pylint" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong>
+We are currently using Pylint instead of Ruff.</p>
+<p><strong>Downsides:</strong></p>
+<ul class="simple">
+<li><p>Pylint is slower and less usable in pre-commit hooks</p></li>
+<li><p>It is an additional tool, therefore at least one more processing run of the code is required</p></li>
+<li><p>No support for Language Server Protocol (LSP, e.g. compare to <cite>ruff lsp</cite>)</p></li>
+</ul>
+<p><strong>Rationale/History:</strong></p>
+<ul class="simple">
+<li><p>Well known</p></li>
+<li><p>Pylint provides built-in project score/rating</p></li>
+<li><p>Project score is good for improving legacy code bases which haven’t been linted previously</p></li>
+<li><p>Plugin support</p></li>
+</ul>
+<p><strong>Ideas/Possible Solutions:</strong></p>
+<p>Replacing Pylint with Ruff for linting would provide significant performance improvement. Additionally, Ruff offers an LSP and IDE integrations and is widely used these days. Additionaly there would be an additional synergy if we adopt ruff for formatting the code base.</p>
+<p>Transitioning to Ruff requires us to adjust the migration and improvement strategies for our projects:</p>
+<ul class="simple">
+<li><p>Currently, our codebase improvements are guided by scores. However, with Ruff, a new approach is necessary. For example, we could incrementally introduce specific linting rules, fix the related issues, and then enforce these rules.</p></li>
+<li><p>The project rating and scoring system will also need modification. One possiblity would be to run Ruff and Pylint in parallel, utilizing Pylint solely for rating and issue resolution while Ruff is incorporated for linting tasks.</p></li>
+</ul>
+</section>
+<section id="security-linter">
+<h3>Security Linter<a class="headerlink" href="#security-linter" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong>
+As of today, the security linter does not fail if it has findings. This was intentionally done to simplify integration and adoption of the tool. Developers can still use the results to improve and find issues within the codebase, and additionally, a rating will be generated to provide some guidance on which projects need attention.</p>
+<p><strong>Downsides:</strong>
+- No enforced safeguard on introducing potential security issues</p>
+<p><strong>Rationale/History:</strong>
+- Simplify adoption into projects
+- First step to introduce tooling and make the current state/rating visible</p>
+<p><strong>Ideas/Possible Solutions:</strong>
+* Define a strategy to address potential security issues in projects. Once this has been done, enforce the immediate addressing of potential security issues in the codebase upon introduction.
+* Allow excluding individual findings in projects until they are fixed.</p>
+</section>
+<section id="workflows-dependency-structure">
+<h3>Workflows Dependency Structure<a class="headerlink" href="#workflows-dependency-structure" title="Link to this heading">¶</a></h3>
+<p><strong>Description:</strong>
+Undocumented workflow interdependencies and structure</p>
+<p><strong>Downsides:</strong>
+- Hard to customize if one does not understand the overall setup and dependencies</p>
+<p><strong>Rationale/History:</strong>
+- Simplify development during the discovery phase (what is needed, how to implement, adjust to discovered needs)
+- Ideally, all workflows will be integrated and use a standard setup (part of the customization can also be done in the called nox tasks)</p>
+<p><strong>Ideas/Possible Solutions:</strong></p>
+<ul class="simple">
+<li><p>Define clear requirements and interfaces</p></li>
+<li><p>Document those requirements and interfaces</p></li>
+</ul>
 </section>
 </section>
 </section>
